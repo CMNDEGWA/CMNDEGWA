@@ -884,7 +884,7 @@ body {
     text-align: center;
     position: relative;
     width: 100%;
-    width: 65vw;
+    margin: 0 auto;
 }
 
 .screenshot-img {
