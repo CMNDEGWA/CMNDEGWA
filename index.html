@@ -82,7 +82,7 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="feature-image">
-                                    <img src="./assets/images/D-JMerchant.svg" alt="Engineering workflow" class="img-fluid rounded-4">
+                                    <img src="./assets/images/JM-Wallpaper.png" alt="Engineering workflow" class="img-fluid rounded-4">
                                 </div>
                             </div>
                         </div>
@@ -121,7 +121,7 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="feature-image">
-                                    <img src="./assets/images/CMN.png" alt="Data systems" class="img-fluid rounded-4">
+                                    <img src="./assets/images/J-Media.png" alt="Data systems" class="img-fluid rounded-4">
                                 </div>
                             </div>
                         </div>
@@ -142,12 +142,12 @@
                             <div class="col-md-6">
                                 <div class="feature-image feature-grid">
                                     <div class="row g-2">
-                                        <div class="col-4"><img src="./assets/images/CMN.png" alt="Mini preview 1" class="img-fluid rounded-3"></div>
-                                        <div class="col-4"><img src="./assets/images/D-JMerchant.svg" alt="Mini preview 2" class="img-fluid rounded-3"></div>
-                                        <div class="col-4"><img src="./assets/images/drawing.svg" alt="Mini preview 3" class="img-fluid rounded-3"></div>
+                                        <div class="col-4"><img src="./assets/images/J-Media.png" alt="Mini preview 1" class="img-fluid rounded-3"></div>
+                                        <div class="col-4"><img src="./assets/images/JM-Wallpaper.png" alt="Mini preview 2" class="img-fluid rounded-3"></div>
+                                        <div class="col-4"><img src="./assets/images/JWatch.png" alt="Mini preview 3" class="img-fluid rounded-3"></div>
                                         <div class="col-4"><img src="./assets/images/Yanken-1.png" alt="Mini preview 4" class="img-fluid rounded-3"></div>
-                                        <div class="col-4"><img src="./assets/images/CMN.png" alt="Mini preview 5" class="img-fluid rounded-3"></div>
-                                        <div class="col-4"><img src="./assets/images/D-JMerchant.svg" alt="Mini preview 6" class="img-fluid rounded-3"></div>
+                                        <div class="col-4"><img src="./assets/images/Clinton.png" alt="Mini preview 5" class="img-fluid rounded-3"></div>
+                                        <div class="col-4"><img src="./assets/images/CMN.png" alt="Mini preview 6" class="img-fluid rounded-3"></div>
                                     </div>
                                 </div>
                             </div>
@@ -155,19 +155,6 @@
                                 <div class="feature-text">
                                     <h2>Macro + Micro Choices</h2>
                                     <p>Choose the level of service that fits your project: wide design systems or detailed engineering components.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="home-feature-row row align-items-center reveal-on-scroll">
-                            <div class="col-md-6">
-                                <div class="feature-text">
-                                    <h2>Future-Ready Blend</h2>
-                                    <p>Each project bridges imagination and technology so your brand and systems evolve together.</p>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="feature-image">
-                                    <img src="./assets/images/Yanken-1.png" alt="Creative technical blend" class="img-fluid rounded-4">
                                 </div>
                             </div>
                         </div>
@@ -184,16 +171,33 @@
                         </h1>
 
                         <div class="row justify-content-center mt-4">
-                            <div class="col-md-6" v-for="p in projects" :key="p.url">
-                                <div class="project-card position-relative reveal-on-scroll mx-auto">
-                                    <span v-if="p.public" class="screenshot-badge">Public</span>
-                                    <a :href="p.url" target="_blank" rel="noopener noreferrer" class="d-block">
-                                        <img :src="p.screenshot" :alt="p.name" class="screenshot-img img-fluid rounded-3 shadow-sm" loading="lazy">
-                                    </a>
-                                    <div class="mt-3 text-start">
-                                        <h5 class="mb-1">{{ p.name }}</h5>
-                                        <p class="mb-0">{{ p.desc }}</p>
+                            <div class="col-12 col-lg-8">
+                                <div id="projectCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-touch="true">
+                                    <div class="carousel-indicators">
+                                        <button v-for="(p, index) in projects" :key="`indicator-${p.url}`" type="button" data-bs-target="#projectCarousel" :data-bs-slide-to="index" :class="{ active: index === 0 }" :aria-current="index === 0 ? 'true' : undefined" :aria-label="`Slide ${index + 1}`"></button>
                                     </div>
+                                    <div class="carousel-inner">
+                                        <div class="carousel-item" v-for="(p, index) in projects" :key="p.url" :class="{ active: index === 0 }">
+                                            <div class="project-card position-relative reveal-on-scroll mx-auto">
+                                                <span v-if="p.public" class="screenshot-badge">Public</span>
+                                                <a :href="p.url" target="_blank" rel="noopener noreferrer" class="d-block">
+                                                    <img :src="p.screenshot" :alt="p.name" class="screenshot-img img-fluid rounded-3 shadow-sm" loading="lazy">
+                                                </a>
+                                                <div class="mt-3 text-start">
+                                                    <h5 class="mb-1">{{ p.name }}</h5>
+                                                    <p class="mb-0">{{ p.desc }}</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button class="carousel-control-prev" type="button" data-bs-target="#projectCarousel" data-bs-slide="prev">
+                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Previous</span>
+                                    </button>
+                                    <button class="carousel-control-next" type="button" data-bs-target="#projectCarousel" data-bs-slide="next">
+                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Next</span>
+                                    </button>
                                 </div>
                             </div>
                         </div>
