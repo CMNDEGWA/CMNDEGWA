@@ -104,51 +104,7 @@ createApp({
             }
         };
 
-        // --- Social & Download Button Persistence Logic ---
-        const showSocialBtn = ref('');
-        const showDownloadBtn = ref('');
-
-        function onSocialEnter(platform) {
-            showSocialBtn.value = platform;
-        }
-        function onSocialLeave(platform) {
-            setTimeout(() => {
-                if (!document.activeElement.classList.contains('social-btn') || document.activeElement.dataset.platform !== platform) {
-                    showSocialBtn.value = '';
-                }
-            }, 100);
-        }
-        function onSocialBtnEnter(platform) {
-            showSocialBtn.value = platform;
-        }
-        function onSocialBtnLeave(platform) {
-            setTimeout(() => {
-                if (!document.activeElement.classList.contains('social-btn') || document.activeElement.dataset.platform !== platform) {
-                    showSocialBtn.value = '';
-                }
-            }, 100);
-        }
-
-        function onDownloadEnter(doc) {
-            showDownloadBtn.value = doc;
-        }
-        function onDownloadLeave(doc) {
-            setTimeout(() => {
-                if (!document.activeElement.classList.contains('download-btn') || document.activeElement.dataset.doc !== doc) {
-                    showDownloadBtn.value = '';
-                }
-            }, 100);
-        }
-        function onDownloadBtnEnter(doc) {
-            showDownloadBtn.value = doc;
-        }
-        function onDownloadBtnLeave(doc) {
-            setTimeout(() => {
-                if (!document.activeElement.classList.contains('download-btn') || document.activeElement.dataset.doc !== doc) {
-                    showDownloadBtn.value = '';
-                }
-            }, 100);
-        }
+        // --- (removed unused Social & Download helper refs/handlers) ---
 
         // --- Download Button Persistence Logic ---
         const visibleDownloadBtn = ref('');
@@ -266,10 +222,7 @@ createApp({
             requestQuote,
             submitQuoteRequest,
             openSocial,
-            // Social & Download Button Persistence
-            showSocialBtn, showDownloadBtn,
-            onSocialEnter, onSocialLeave, onSocialBtnEnter, onSocialBtnLeave,
-            onDownloadEnter, onDownloadLeave, onDownloadBtnEnter, onDownloadBtnLeave,
+            // Social & Download Button Persistence (exposed handlers removed when unused)
             visibleDownloadBtn,
             showDownloadButton,
             hideDownloadButton,

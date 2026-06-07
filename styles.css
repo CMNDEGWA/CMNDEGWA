@@ -17,11 +17,6 @@
     --dark-color: #000000;
 }
 
-.text-black,
-.icon-black {
-    color: var(--dark-color) !important;
-}
-
 .bg-app-black {
     background-color: var(--background-color);
 }
@@ -475,13 +470,11 @@ body {
     aspect-ratio: 1 / 1;
 }
 
-.button-gradient,
 .btn {
     background-color: var(--foreground-color);
     color: var(--dark-color);
 }
 
-.button-gradient:hover,
 .btn:hover {
     background-color: rgba(146,172,255,0.85);
     color: var(--dark-color);
