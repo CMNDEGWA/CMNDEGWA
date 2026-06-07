@@ -8,11 +8,32 @@ createApp({
         // Projects data (for Projects section)
         const projects = ref([
             {
-                name: 'Example Site',
+                name: 'The Web Sphere (TWS)',
                 url: 'https://cmndegwa.github.io/P-TWS/',
                 screenshot: './assets/images/TWS.png',
                 public: true,
-                desc: 'Live demo — click image to open.'
+                desc: 'A Graphic Design Portfolio showcasing logos, posters, and social media graphics with category-based navigation and process notes.'
+            },
+            {
+                name: 'Personal Blog Website',
+                url: 'https://cmndegwa.github.io/muthungu-Webpage/',
+                screenshot: './assets/images/Personal-Blog.jpg',
+                public: true,
+                desc: 'A personal blog website built with HTML, CSS, and JavaScript, featuring a clean design and responsive layout for sharing thoughts and experiences.'
+            },
+            {
+                name: 'E-Commerce Storefront',
+                url: 'https://cmndegwa.github.io/Yanken-Store/',
+                screenshot: './assets/images/Y-Workstation.jpg',
+                public: true,
+                desc: 'A simple e-commerce storefront with product listings, shopping cart functionality, and a checkout process, built using HTML, CSS, and JavaScript.'
+            },
+            {
+                name: 'Yanken IT Outsourcing Portal',
+                url: 'https://cmndegwa.github.io/Yanken/',
+                screenshot: './assets/images/Yanken-IT.jpg',
+                public: true,
+                desc: 'A comprehensive IT outsourcing portal for Yanken, featuring service listings, client testimonials, and a contact form, built with HTML, CSS, and JavaScript.'
             }
         ]);
 
