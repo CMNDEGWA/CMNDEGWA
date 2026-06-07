@@ -24,7 +24,7 @@ createApp({
             {
                 name: 'E-Commerce Storefront',
                 url: 'https://cmndegwa.github.io/Yanken-Store/',
-                screenshot: './assets/images/Y-Workstation.jpg',
+                screenshot: './assets/images/Y-Workstations.jpg',
                 public: true,
                 desc: 'A simple e-commerce storefront with product listings, shopping cart functionality, and a checkout process, built using HTML, CSS, and JavaScript.'
             },
