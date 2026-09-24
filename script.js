@@ -5,37 +5,70 @@ createApp({
     setup() {
         // Reactive data for the referral form (removed — replaced by Projects section)
 
+        const projectCategories = [
+            { key: 'all', label: 'All Work' },
+            { key: 'design', label: 'Graphic Design' },
+            { key: 'data', label: 'Data Engineering' },
+            { key: 'software', label: 'Software Development' }
+        ];
+
+        const selectedProjectCategory = ref('all');
+
         // Projects data (for Projects section)
         const projects = ref([
             {
                 name: 'The Web Sphere (TWS)',
+                category: 'design',
+                categoryLabel: 'Graphic Design',
                 url: 'https://cmndegwa.github.io/P-TWS/',
                 screenshot: './assets/images/TWS.png',
                 public: true,
-                desc: 'A Graphic Design Portfolio showcasing logos, posters, and social media graphics with category-based navigation and process notes.'
+                desc: 'A graphic design portfolio built for visual storytelling, featuring category-based showcases for branding, posters, and social media creative.'
+            },
+            {
+                name: 'Data Flow Dashboard Concept',
+                category: 'data',
+                categoryLabel: 'Data Engineering',
+                url: '#',
+                screenshot: './assets/images/J-Media.png',
+                public: false,
+                desc: 'A concept-driven data visualization and system planning layout focused on structured reporting, information flow, and operational clarity.'
             },
             {
                 name: 'Personal Blog Website',
+                category: 'software',
+                categoryLabel: 'Software Development',
                 url: 'https://cmndegwa.github.io/muthungu-Webpage/',
                 screenshot: './assets/images/Personal-Blog.jpg',
                 public: true,
-                desc: 'A personal blog website built with HTML, CSS, and JavaScript, featuring a clean design and responsive layout for sharing thoughts and experiences.'
+                desc: 'A personal blog experience designed with responsive layout principles, clean content hierarchy, and lightweight front-end execution.'
             },
             {
                 name: 'E-Commerce Storefront',
+                category: 'software',
+                categoryLabel: 'Software Development',
                 url: 'https://cmndegwa.github.io/Yanken-Store/',
                 screenshot: './assets/images/Y-Workstations.jpg',
                 public: true,
-                desc: 'A simple e-commerce storefront with product listings, shopping cart functionality, and a checkout process, built using HTML, CSS, and JavaScript.'
+                desc: 'A storefront interface designed to support product browsing, cart interactions, and conversion-focused checkout flow design.'
             },
             {
                 name: 'Yanken IT Outsourcing Portal',
+                category: 'software',
+                categoryLabel: 'Software Development',
                 url: 'https://cmndegwa.github.io/Yanken/',
                 screenshot: './assets/images/Yanken-IT.jpg',
                 public: true,
-                desc: 'A comprehensive IT outsourcing portal for Yanken, featuring service listings, client testimonials, and a contact form, built with HTML, CSS, and JavaScript.'
+                desc: 'A service portal concept combining structured content, portfolio presentation, and conversion-oriented contact flows for a business brand.'
             }
         ]);
+
+        const filteredProjects = computed(() => {
+            if (selectedProjectCategory.value === 'all') {
+                return projects.value;
+            }
+            return projects.value.filter(project => project.category === selectedProjectCategory.value);
+        });
 
         const currentYear = computed(() => new Date().getFullYear());
 
@@ -210,6 +243,9 @@ createApp({
 
         return {
             currentYear,
+            projectCategories,
+            selectedProjectCategory,
+            filteredProjects,
             // Projects data
             projects,
             // Modal state and methods
@@ -249,7 +285,7 @@ createApp({
 // --- ScrollSpy Implementation ---
 window.addEventListener('DOMContentLoaded', () => {
     const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
-    const sections = ['home', 'services', 'contact', 'projects'].map(id => document.getElementById(id));
+    const sections = ['home', 'expertise', 'services', 'contact', 'projects'].map(id => document.getElementById(id));
 
     function onScrollSpy() {
         let currentSection = null;
