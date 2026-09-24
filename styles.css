@@ -487,6 +487,123 @@ body {
    - .social-media-link, .document-download-link: Style the social and download links, including icons and text.
    - .social-link, i, span: Style anchor tags and icons within contact links.
 */
+.home-hero-copy h1 {
+    color: var(--text-color);
+    font-size: clamp(2.2rem, 4vw, 4rem);
+    line-height: 1.1;
+    margin: 1rem 0 1.2rem;
+    letter-spacing: 0.04em;
+} 
+
+.section-heading h2 {
+    color: var(--text-color);
+    font-size: clamp(1.8rem, 2.8vw, 2.8rem);
+    margin-bottom: 0;
+}
+
+.expertise-section {
+    margin-top: 4rem;
+}
+
+.expertise-card {
+    position: relative;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    border: 1px solid rgba(146, 172, 255, 0.2);
+    border-radius: 1.5rem;
+    padding: 2rem 1.5rem;
+    height: 100%;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.24);
+    transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease, filter 0.35s ease;
+    isolation: isolate;
+}
+
+.expertise-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(146, 172, 255, 0.08), rgba(14, 9, 41, 0.84));
+    z-index: -1;
+    transition: transform 0.35s ease, opacity 0.35s ease;
+}
+
+.expertise-card:hover {
+    transform: translateY(-8px) scale(1.01);
+    border-color: rgba(146, 172, 255, 0.8);
+    box-shadow: 0 28px 60px rgba(0, 0, 0, 0.38);
+    filter: saturate(1.12);
+}
+
+.expertise-card:hover::before {
+    transform: scale(1.08);
+}
+
+.highlight-card {
+    border-color: rgba(146, 172, 255, 0.8);
+    box-shadow: 0 30px 65px rgba(78, 98, 166, 0.28);
+}
+
+.expertise-icon {
+    width: 70px;
+    height: 70px;
+    display: grid;
+    place-items: center;
+    border-radius: 20px;
+    background: rgba(146, 172, 255, 0.12);
+    border: 1px solid rgba(146, 172, 255, 0.25);
+    color: var(--extra-color);
+    font-size: 1.7rem;
+    margin-bottom: 1rem;
+    backdrop-filter: blur(12px);
+    transition: transform 0.35s ease, background 0.35s ease, color 0.35s ease;
+}
+
+.expertise-card:hover .expertise-icon {
+    transform: translateY(-3px) rotate(-4deg);
+    background: rgba(146, 172, 255, 0.18);
+    color: #ffffff;
+}
+
+.expertise-card h3 {
+    color: var(--text-color);
+    font-size: 1.7rem;
+    margin-bottom: 1rem;
+}
+
+.expertise-card p {
+    color: var(--paragraph-color);
+    line-height: 1.75;
+    margin-bottom: 1rem;
+    max-width: 28ch;
+}
+
+.expertise-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.5rem;
+    color: var(--paragraph-color);
+}
+
+.expertise-card ul li {
+    position: relative;
+    padding-left: 1.4rem;
+    margin-bottom: 0.7rem;
+    line-height: 1.6;
+}
+
+.expertise-card ul li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--extra-color);
+    font-size: 1.2rem;
+}
+
+.expertise-card .btn {
+    margin-top: auto;
+}
+
 #contact .contact-title-2 {
     font-size: 1rem;
     font-weight: 400;
@@ -871,13 +988,60 @@ body {
      PROJECTS SECTION STYLES
      =========================
 */
+.project-filter-bar {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.project-filter {
+    background: rgba(146, 172, 255, 0.08);
+    border: 1px solid rgba(146, 172, 255, 0.25);
+    color: var(--text-color);
+    border-radius: 999px;
+    padding: 0.6rem 1rem;
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.project-filter:hover,
+.project-filter.active {
+    background: linear-gradient(135deg, rgba(146, 172, 255, 0.22), rgba(146, 172, 255, 0.08));
+    border-color: rgba(146, 172, 255, 0.7);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.18);
+}
+
 .project-card {
-    background: var(--surface-color);
-    border-radius: 0;
+    background: rgba(14, 9, 41, 0.82);
+    border-radius: 1.25rem;
     text-align: center;
     position: relative;
     width: 100%;
     margin: 0 auto;
+    overflow: hidden;
+    border: 1px solid rgba(146, 172, 255, 0.15);
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.24);
+}
+
+.project-card .project-copy {
+    padding: 1.25rem 1.25rem 1.5rem;
+}
+
+.project-card .project-copy h5 {
+    color: var(--text-color);
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.project-card .project-copy p {
+    color: var(--paragraph-color);
+    line-height: 1.7;
 }
 
 .screenshot-img {
@@ -885,19 +1049,21 @@ body {
     object-fit: cover;
     display: block;
     margin: 0 auto;
+    min-height: 320px;
+    max-height: 420px;
 }
 
 .screenshot-badge {
     position: absolute;
     top: 12px;
     left: 12px;
-    background: rgba(0,0,0,0.65);
+    background: rgba(0,0,0,0.7);
     color: var(--extra-color);
     padding: 6px 10px;
-    border-radius: 6px;
+    border-radius: 999px;
     font-weight: 700;
     font-family: "Savate", sans-serif;
     z-index: 5;
-    font-size: .85rem;
+    font-size: .75rem;
     text-transform: uppercase;
-}
+    letter-spacing: 0.08em;
