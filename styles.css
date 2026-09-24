@@ -342,6 +342,10 @@ body {
     margin-bottom: 42px;
 }
 
+#home .home-hero-copy h1 {
+    text-decoration: none;   
+}
+
 /* =========================
    SERVICES SECTION STYLES
    =========================
