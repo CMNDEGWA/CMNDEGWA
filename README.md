@@ -5,7 +5,7 @@ Hi there! I'm a passionate developer and data enthusiast with a strong foundatio
 
 Throughout my journey, I have honed my ability to design clean code, work with various databases, and bridge the gap between software engineering and data-driven problem-solving. Whether I am building backend systems, analyzing datasets, or exploring new technologies, I am driven by curiosity and a commitment to continuous learning.
 
-My CV is available in [PDF format](https://github.com/CMNDEGWA/your-repo-name/blob/main/Your_Name_CV.pdf).
+My CV is available upon request.
 
 This repository serves as a hub to showcase my technical skills, share project code, and track my ongoing progress in software development and data-related topics.
 
@@ -32,7 +32,7 @@ This repository serves as a hub to showcase my technical skills, share project c
 In this section, you will find a selection of projects highlighting the technology stacks and methodologies I use to solve real-world problems.
 
 ### Project Name 1 (e.g., Backend Automation Tool)
-**Code:** [`project_file.py`](https://github.com/CMNDEGWA/your-repo-name/blob/main/project_file.py)
+**Code:** [`Python`](https://github.com/CMNDEGWA/Python)
 
 **Goal:** To automate data processing and streamline backend operations efficiently.
 
@@ -47,7 +47,7 @@ In this section, you will find a selection of projects highlighting the technolo
 ---
 
 ### Database Optimization & Management
-**Code:** [`database_queries.sql`](https://github.com/CMNDEGWA/your-repo-name/blob/main/database_queries.sql)
+**Code:** [`SQL`](https://github.com/CMNDEGWA/SQLl)
 
 **Description:** Designed and optimized relational database schemas and complex queries to handle large volumes of transactional data efficiently.
 
@@ -56,22 +56,8 @@ In this section, you will find a selection of projects highlighting the technolo
 **Technology:** PostgreSQL / MySQL / SQL Server.
 
 ---
-
-## Education
-**University / Institution Name:**  
-Degree Title / Field of Study,  
-Year - Year
-
----
-
-## Certificates
-Here is a list of professional certifications and credentials I have earned (in reverse-chronological order):
-- [Certification Name 1](https://link-to-certificate.com) (Month Year) (Issuing Organization)
-- [Certification Name 2](https://link-to-certificate.com) (Month Year) (Issuing Organization)
-
 ---
 
 ## Contact
 - GitHub: [@CMNDEGWA](https://github.com/CMNDEGWA)
-- LinkedIn: [Your LinkedIn Profile](https://www.linkedin.com/in/your-profile)
-- Email: your.email@example.com
+- Email: muthunguclintn@gmail.com
