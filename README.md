@@ -15,15 +15,11 @@ This repository serves as a hub to showcase my technical skills, share project c
 - [About](#about)
 - [Portfolio Projects](#portfolio-projects)
   - Python / Backend
-    - [Project Name 1 (e.g., API Service / Automation Tool)](#project-name-1)
-    - [Project Name 2](#project-name-2)  
+    - [E-Commerce Store Website](https://github.com/CMNDEGWA/De-commerce)
   - SQL / Databases
-    - [Database Optimization & Management](#database-optimization--management)
+    - [Database Administration](#)
   - Web Development / Full-Stack
-    - [Web Application Project](#web-application-project)
-  - Data Analytics / Visualization
-- [Education](#education)  
-- [Certificates](#certificates)
+    - [Blog Web Project](#w)
 - [Contact](#contact)
 
 ---
@@ -31,22 +27,22 @@ This repository serves as a hub to showcase my technical skills, share project c
 ## Portfolio Projects
 In this section, you will find a selection of projects highlighting the technology stacks and methodologies I use to solve real-world problems.
 
-### Project Name 1 (e.g., Backend Automation Tool)
-**Code:** [`Python`](https://github.com/CMNDEGWA/Python)
+### E-Commerce Store Website
+**Code:** [De-commerce](https://github.com/CMNDEGWA/De-commerce)
 
-**Goal:** To automate data processing and streamline backend operations efficiently.
+**Goal:** To build and launch a functional e-commerce web application with a smooth shopping experience.
 
-**Description:** This project focuses on building a script that ingests raw data, processes it through custom pipelines, and outputs structured reports. It involved setting up efficient data structures, handling exceptions, and optimizing execution time.
+**Description:** This project is a complete online store designed to showcase products, support customer browsing, and deliver a clean shopping experience across devices. It focuses on responsive layout, product presentation, and a simple user journey for exploring and purchasing items.
 
-**Skills:** Algorithm design, data processing, error handling, workflow automation.
+**Skills:** Frontend development, UI/UX design, e-commerce workflows, responsive design, web application development.
 
-**Technology:** Python, Pandas, Git.
+**Technology:** HTML, CSS, JavaScript, Bootstrap, Git.
 
-**Results:** Successfully reduced manual data processing time and improved accuracy across pipeline runs.
+**Results:** Created a user-friendly storefront experience focused on usability, responsiveness, and product presentation.
 
 ---
 
-### Database Optimization & Management
+### Database Administration
 **Code:** [`SQL`](https://github.com/CMNDEGWA/SQLl)
 
 **Description:** Designed and optimized relational database schemas and complex queries to handle large volumes of transactional data efficiently.
