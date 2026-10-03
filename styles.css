@@ -212,31 +212,31 @@ body {
 }
 
 .home-container {
-    padding: 50px 0;
-    margin: 70px 0;
+    padding: 2.25rem 0 1.5rem;
+    margin: 3rem 0;
 }
 
 #home h1{
-    font-size: 2.1rem;
+    font-size: clamp(2rem, 4vw, 3.2rem);
     color: var(--text-color);
-    margin: 2.1rem 0;
-    letter-spacing: 2px;
+    margin: 1.4rem 0 1.8rem;
+    letter-spacing: 0.06em;
     text-decoration: underline;
     text-underline-offset: 14px;
 }
 
 #services h1 {
     color: var(--text-color);
-    margin: 3rem 0;
-    letter-spacing: 2px;
+    margin: 2.2rem 0 2.6rem;
+    letter-spacing: 0.05em;
     text-decoration: underline;
     text-underline-offset: 14px;
 }
 
 #contact h1 {
     color: var(--text-color);
-    margin: 3rem 0;
-    letter-spacing: 2px;
+    margin: 2.2rem 0 2.6rem;
+    letter-spacing: 0.05em;
     text-decoration: underline;
     text-underline-offset: 14px;
 }
@@ -423,11 +423,11 @@ body {
 }
 
 .section-content {
-    min-height: calc(100vh - 4rem); /* Approx. header height; ensures sections are tall enough to scroll */
+    min-height: calc(100vh - 4rem);
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 2rem;
+    padding: clamp(1.2rem, 3vw, 2.5rem);
     text-align: center;
 }
 
@@ -435,6 +435,7 @@ body {
     letter-spacing: 0.35em;
     color: var(--foreground-color);
     opacity: 0.9;
+    font-size: 0.72rem;
 }
 
 .home-hero-copy h1,
@@ -494,19 +495,41 @@ body {
 .home-hero-copy h1 {
     color: var(--text-color);
     font-size: clamp(2.2rem, 4vw, 4rem);
-    line-height: 1.1;
-    margin: 1rem 0 1.2rem;
+    line-height: 0.98;
+    margin: 0.85rem 0 1.1rem;
     letter-spacing: 0.04em;
-} 
+}
 
 .section-heading h2 {
     color: var(--text-color);
-    font-size: clamp(1.8rem, 2.8vw, 2.8rem);
-    margin-bottom: 0;
+    font-size: clamp(1.9rem, 2.8vw, 3rem);
+    margin-bottom: 1.25rem;
+    line-height: 1.12;
 }
 
 .expertise-section {
     margin-top: 4rem;
+}
+
+.expertise-grid {
+    align-items: stretch;
+    margin-top: 1.25rem;
+}
+
+.expertise-column {
+    display: flex;
+}
+
+.design-column {
+    transform: translateY(18px);
+}
+
+.data-column {
+    transform: translateY(-6px);
+}
+
+.software-column {
+    transform: translateY(28px);
 }
 
 .expertise-card {
@@ -515,49 +538,53 @@ body {
     background-size: cover;
     background-position: center;
     border: 1px solid rgba(146, 172, 255, 0.2);
-    border-radius: 1.5rem;
-    padding: 2rem 1.5rem;
-    height: 100%;
+    border-radius: 1.6rem;
+    padding: clamp(1.4rem, 2vw, 2rem) 1.25rem;
+    min-height: 100%;
+    width: 100%;
     box-shadow: 0 20px 45px rgba(0, 0, 0, 0.24);
     transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease, filter 0.35s ease;
     isolation: isolate;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
 }
 
 .expertise-card::before {
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(180deg, rgba(146, 172, 255, 0.08), rgba(14, 9, 41, 0.84));
+    background: linear-gradient(180deg, rgba(146, 172, 255, 0.08), rgba(14, 9, 41, 0.86));
     z-index: -1;
     transition: transform 0.35s ease, opacity 0.35s ease;
 }
 
 .expertise-card:hover {
-    transform: translateY(-8px) scale(1.01);
-    border-color: rgba(146, 172, 255, 0.8);
-    box-shadow: 0 28px 60px rgba(0, 0, 0, 0.38);
-    filter: saturate(1.12);
+    transform: translateY(-10px) scale(1.02);
+    border-color: rgba(146, 172, 255, 0.85);
+    box-shadow: 0 30px 66px rgba(0, 0, 0, 0.42);
+    filter: saturate(1.14);
 }
 
 .expertise-card:hover::before {
-    transform: scale(1.08);
+    transform: scale(1.09);
 }
 
 .highlight-card {
-    border-color: rgba(146, 172, 255, 0.8);
-    box-shadow: 0 30px 65px rgba(78, 98, 166, 0.28);
+    border-color: rgba(146, 172, 255, 0.9);
+    box-shadow: 0 35px 70px rgba(78, 98, 166, 0.26);
 }
 
 .expertise-icon {
-    width: 70px;
-    height: 70px;
+    width: 72px;
+    height: 72px;
     display: grid;
     place-items: center;
-    border-radius: 20px;
+    border-radius: 22px;
     background: rgba(146, 172, 255, 0.12);
     border: 1px solid rgba(146, 172, 255, 0.25);
     color: var(--extra-color);
-    font-size: 1.7rem;
+    font-size: 1.8rem;
     margin-bottom: 1rem;
     backdrop-filter: blur(12px);
     transition: transform 0.35s ease, background 0.35s ease, color 0.35s ease;
@@ -565,13 +592,13 @@ body {
 
 .expertise-card:hover .expertise-icon {
     transform: translateY(-3px) rotate(-4deg);
-    background: rgba(146, 172, 255, 0.18);
+    background: rgba(146, 172, 255, 0.2);
     color: #ffffff;
 }
 
 .expertise-card h3 {
     color: var(--text-color);
-    font-size: 1.7rem;
+    font-size: 1.8rem;
     margin-bottom: 1rem;
 }
 
@@ -606,6 +633,7 @@ body {
 
 .expertise-card .btn {
     margin-top: auto;
+    align-self: flex-start;
 }
 
 #contact .contact-title-2 {
@@ -919,7 +947,7 @@ body {
 */
 @media (max-width: 576px) {
     .navbar-nav.flex-row {
-        flex-direction: row !important;      /* Keep nav links in a row */
+        flex-direction: row !important;
         align-items: center !important;
         width: 80%;
         justify-content: space-between;
@@ -942,15 +970,66 @@ body {
         padding-right: 0.2rem;
     }
 
-    /* Remove fixed width from referral form button */
-    #referrals form .btn {
-        width: 100% !important;
+    .home-container {
+        margin: 1.5rem 0 2rem;
+        padding: 1rem 0;
     }
 
-    /* Reduce padding and margin for cards and sections */
     .section-content {
-        padding: 0.5rem !important;
+        padding: 0.9rem !important;
     }
+
+    .home-hero-copy h1,
+    #home h1, #services h1, #contact h1, #referrals .referral-title {
+        font-size: 1.65rem !important;
+        line-height: 1.08 !important;
+        letter-spacing: 0.04em !important;
+        text-decoration: none !important;
+        margin-top: 0.8rem !important;
+        margin-bottom: 1rem !important;
+    }
+
+    #home .choose-engineer-title,
+    #home .set-apart-title,
+    #home .tech-game-title,
+    .section-heading h2 {
+        font-size: 1.25rem !important;
+        line-height: 1.2 !important;
+    }
+
+    .home-feature-row {
+        padding: 1rem 0;
+    }
+
+    .home-feature-row .feature-text {
+        text-align: center;
+    }
+
+    .home-container .choose-engineer-text p,
+    .home-container .set-apart-text p,
+    #home .home-container .tech-game-text {
+        padding: 12px 0 !important;
+    }
+
+    .design-column,
+    .data-column,
+    .software-column {
+        transform: none !important;
+    }
+
+    .expertise-card {
+        padding: 1.3rem 1rem;
+    }
+
+    .expertise-card h3 {
+        font-size: 1.45rem;
+    }
+
+    .expertise-card p,
+    .expertise-card ul {
+        max-width: none;
+    }
+
     #services .services-row .card {
         margin: 0.5rem !important;
     }
@@ -958,25 +1037,10 @@ body {
         padding: 1rem !important;
     }
 
-    /* Reduce font sizes for headings */
-    #home h1, #services h1, #contact h1, #referrals .referral-title {
-        font-size: 1.3rem !important;
-        text-decoration: none !important;
-    }
-    #home .choose-engineer-title,
-    #home .set-apart-title,
-    #home .tech-game-title {
-        font-size: 1rem !important;
+    #referrals form .btn {
+        width: 100% !important;
     }
 
-    /* Reduce padding in text blocks */
-    .home-container .choose-engineer-text p,
-    .home-container .set-apart-text p,
-    #home .home-container .tech-game-text {
-        padding: 12px 0 !important;
-    }
-
-    /* Contact section paddings */
     #contact .social-media-link p,
     #contact .document-download-link p {
         padding-top: 12px !important;
@@ -1071,3 +1135,4 @@ body {
     font-size: .75rem;
     text-transform: uppercase;
     letter-spacing: 0.08em;
+}
