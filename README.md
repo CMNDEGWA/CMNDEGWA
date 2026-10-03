@@ -1,6 +1,7 @@
 # CMNDEGWA - Software & Data Portfolio
 
 ## About
+
 Hi there! I'm a passionate developer and data enthusiast with a strong foundation in building robust software solutions and uncovering insights through data. I enjoy tackling complex challenges, optimizing workflows, and creating efficient, scalable applications. 
 
 Throughout my journey, I have honed my ability to design clean code, work with various databases, and bridge the gap between software engineering and data-driven problem-solving. Whether I am building backend systems, analyzing datasets, or exploring new technologies, I am driven by curiosity and a commitment to continuous learning.
@@ -12,12 +13,13 @@ This repository serves as a hub to showcase my technical skills, share project c
 ---
 
 ## Table of Contents
+
 - [About](#about)
 - [Portfolio Projects](#portfolio-projects)
-  - Python / Backend
+  - Python / Web Development
     - [E-Commerce Store Website](https://github.com/CMNDEGWA/De-commerce)
-  - SQL / Databases
-    - [Database Administration](#)
+  - SQL / Databases Administration
+    - [Inventory Management System](https://github.com/CMNDEGWA/SQL/tree/main/IMS)
   - Web Development / Full-Stack
     - [Blog Web Project](#w)
 - [Contact](#contact)
@@ -25,10 +27,13 @@ This repository serves as a hub to showcase my technical skills, share project c
 ---
 
 ## Portfolio Projects
+
 In this section, you will find a selection of projects highlighting the technology stacks and methodologies I use to solve real-world problems.
 
-### E-Commerce Store Website
+## E-Commerce Store Website
+
 **Code:** 
+
 [De-commerce](https://github.com/CMNDEGWA/De-commerce)
 
 **Goal:** 
@@ -76,16 +81,34 @@ It supports:
 
 ---
 
-### Database Administration
-**Code:** [`SQL`](https://github.com/CMNDEGWA/SQLl)
+## Inventory Management System
+**Code:**
 
-**Description:** Designed and optimized relational database schemas and complex queries to handle large volumes of transactional data efficiently.
+[`IMS`](https://github.com/CMNDEGWA/SQL/tree/main/IMS)
 
-**Skills:** DML, DDL, Indexing, Query Optimization, Joins, Aggregations.
+**Description:**
 
-**Technology:** PostgreSQL / MySQL / SQL Server.
+This is a stock control workflow project.
+Products are linked to categories and suppliers, while every stock change is recorded as a movement event. SQL views and triggers ensure stock updates remain consistent and prevent invalid transactions such as negative inventory. A Django dash board provides business visiblity through inventory summaries and graphs.
 
----
+**Skills:**
+
+SQL schema design and normalization.
+Primary and Foreign Keys, Constraints and validation rules.
+Views, triggers for data integrity and database migration.
+Python automation, monitoring and diagnostics.
+
+**Technology:**
+
+SQLite and PostgreSQL.
+Python and Django REST Framework.
+Chart.js and Vue.js.
+HTML, CSS and Javascript.
+
+**Results:**
+
+An Inventory Management SYstem (IMS) that tracks stock movements safely and presents data through a Django Web Dashboard.
+
 ---
 
 ## Contact
