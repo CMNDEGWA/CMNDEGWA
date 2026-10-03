@@ -1,12 +1,12 @@
-# CMNDEGWA - Software & Data Portfolio
+# Software & Data Engineer
 
 ## About
 
-Hi there! I'm a passionate developer and data enthusiast with a strong foundation in building robust software solutions and uncovering insights through data. I enjoy tackling complex challenges, optimizing workflows, and creating efficient, scalable applications. 
+Hi there! I'm a passionate software developer and data engineer with a strong foundation in building robust software solutions and uncovering insights through data. I enjoy tackling complex challenges, optimizing workflows, and creating efficient, scalable applications. 
 
 Throughout my journey, I have honed my ability to design clean code, work with various databases, and bridge the gap between software engineering and data-driven problem-solving. Whether I am building backend systems, analyzing datasets, or exploring new technologies, I am driven by curiosity and a commitment to continuous learning.
 
-My CV is available upon request.
+My CV is available upon request. [Portfolio Website]()
 
 This repository serves as a hub to showcase my technical skills, share project code, and track my ongoing progress in software development and data-related topics.
 
