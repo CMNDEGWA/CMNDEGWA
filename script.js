@@ -7,9 +7,9 @@ createApp({
 
         const projectCategories = [
             { key: 'all', label: 'All Work' },
-            { key: 'design', label: 'Graphic Design' },
-            { key: 'data', label: 'Data Engineering' },
-            { key: 'software', label: 'Software Development' }
+            { key: 'design', label: 'Brand Design' },
+            { key: 'data', label: 'Data Systems' },
+            { key: 'software', label: 'Product Builds' }
         ];
 
         const selectedProjectCategory = ref('all');
@@ -19,47 +19,47 @@ createApp({
             {
                 name: 'The Web Sphere (TWS)',
                 category: 'design',
-                categoryLabel: 'Graphic Design',
+                categoryLabel: 'Brand Design',
                 url: 'https://cmndegwa.github.io/P-TWS/',
                 screenshot: './assets/images/TWS.png',
                 public: true,
-                desc: 'A graphic design portfolio built for visual storytelling, featuring category-based showcases for branding, posters, and social media creative.'
+                desc: 'A brand-first portfolio experience that showcases identity work, campaign art, and visual storytelling with a clean editorial rhythm.'
             },
             {
-                name: 'Data Flow Dashboard Concept',
+                name: 'Data Systems Dashboard Concept',
                 category: 'data',
-                categoryLabel: 'Data Engineering',
+                categoryLabel: 'Data Systems',
                 url: '#',
                 screenshot: './assets/images/J-Media.png',
                 public: false,
-                desc: 'A concept-driven data visualization and system planning layout focused on structured reporting, information flow, and operational clarity.'
+                desc: 'A concept for structured reporting and operational visibility, designed around data clarity, system logic, and cleaner decision-making.'
             },
             {
                 name: 'Personal Blog Website',
                 category: 'software',
-                categoryLabel: 'Software Development',
+                categoryLabel: 'Product Builds',
                 url: 'https://cmndegwa.github.io/muthungu-Webpage/',
                 screenshot: './assets/images/Personal-Blog.jpg',
                 public: true,
-                desc: 'A personal blog experience designed with responsive layout principles, clean content hierarchy, and lightweight front-end execution.'
+                desc: 'A responsive content-focused website balancing UX clarity, readable storytelling, and strong front-end craftsmanship.'
             },
             {
                 name: 'E-Commerce Storefront',
                 category: 'software',
-                categoryLabel: 'Software Development',
+                categoryLabel: 'Product Builds',
                 url: 'https://cmndegwa.github.io/Yanken-Store/',
                 screenshot: './assets/images/Y-Workstations.jpg',
                 public: true,
-                desc: 'A storefront interface designed to support product browsing, cart interactions, and conversion-focused checkout flow design.'
+                desc: 'A conversion-aware storefront built to support product browsing, shopping flow, and a more confident online buying experience.'
             },
             {
                 name: 'Yanken IT Outsourcing Portal',
                 category: 'software',
-                categoryLabel: 'Software Development',
+                categoryLabel: 'Product Builds',
                 url: 'https://cmndegwa.github.io/Yanken/',
                 screenshot: './assets/images/Yanken-IT.jpg',
                 public: true,
-                desc: 'A service portal concept combining structured content, portfolio presentation, and conversion-oriented contact flows for a business brand.'
+                desc: 'A service-led digital portal shaped around business messaging, trust-building content, and clear user pathways to inquiry.'
             }
         ]);
 
