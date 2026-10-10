@@ -80,7 +80,8 @@ It supports:
   - Single-product creation.
 
 ---
-###Inventory Management System
+
+## Inventory Management System
 **Title**
 
 [`IMS`](https://github.com/CMNDEGWA/SQL/tree/main/IMS)
