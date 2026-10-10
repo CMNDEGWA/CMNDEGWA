@@ -21,7 +21,9 @@ This repository serves as a hub to showcase my technical skills, share project c
   - SQL / Databases Administration
     - [Inventory Management System](https://github.com/CMNDEGWA/SQL/tree/main/IMS)
   - Linux Administration / Bash Scripting
-    - [Privacy Bash Script](#w)
+    - [Privacy Bash Script](https://github.com/CMNDEGWA/pbash)
+  - Office Suite / Excel Analyser
+    - [Data Visualizer - Excel](https://github.com/CMNDEGWA/Data-Visualizer-Web-Application)
 - [Contact](#contact)
 
 ---
@@ -150,6 +152,51 @@ iproute2 for MAC changes.
 **Results**
 
 A privacy suite built on bash, that gives a user a graphical tool for performing privacy hardening tasks all in a single place. It is lightweight, easy to run and understand and usable on Linux systems.
+
+---
+
+## Data Visualizer - Excel
+**Title**
+
+[`Data Visualier - Excel`](https://github.com/CMNDEGWA/Data-Visualizer-Web-Application)
+
+**Goal** 
+
+To provide a data analyst/officer a platform that can ingest Excel workbooks with consistent and inconsistent sheet layouts and column names, analyse and arrange the data and display the Excel full information through a dashboard.
+
+**Description**
+
+This project is a Django application designed for Excel workbook processing:
+  - Users upload Excel files.
+  - The system inpects the worksheets and headers dynamically.
+  - Maps source columns to standardized fields.
+  - Validates and cleans records.
+  - Calculates Key Metrics.
+  - Displays the results in a responsive dashboard.
+
+It is built to handle varied data structures without needing a anew schema for every file.
+
+**Skills**
+
+Django web development, Data ingestion and processing.
+Excel sheet analysis, Data validation and cleaning.
+Extract, transform and load pipeline design.
+Key performance indicators and reporting logic.
+Dashboard (Web Development) and visualization (User Interface) design.
+Database management.
+
+**Technology**
+
+Django, python libraries; **pandas, openpyxl**.
+PostgreSQL and pgAdmin for database management.
+Tailwind CSS for User Interface styling.
+Celery and Redis for background jobs.
+Charts by Chart,js
+
+**Results**
+
+A data visualization workflow that can process incomplete or inconsistent Excel files, identify relevanr sheets and columns automatically, highlight missing or invalid data and generate summary insights through a dashboard.
+It improves data usability by turning raw spreadsheet input into cleaner, structured and actionable business information
 
 ---
 
