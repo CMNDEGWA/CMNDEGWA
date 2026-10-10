@@ -80,8 +80,8 @@ It supports:
   - Single-product creation.
 
 ---
-
-## Inventory Management System
+<details>
+<summary>## Inventory Management System</summary>
 **Title**
 
 [`IMS`](https://github.com/CMNDEGWA/SQL/tree/main/IMS)
@@ -112,7 +112,7 @@ HTML, CSS and Javascript.
 **Results**
 
 An Inventory Management SYstem (IMS) that tracks stock movements safely and presents data through a Django Web Dashboard.
-
+</details>
 ---
 
 ## Privacy Bash Script
