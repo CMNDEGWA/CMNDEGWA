@@ -81,7 +81,7 @@ It supports:
 
 ---
 <details>
-<summary>## Inventory Management System</summary>
+###<summary>Inventory Management System</summary>
 **Title**
 
 [`IMS`](https://github.com/CMNDEGWA/SQL/tree/main/IMS)
