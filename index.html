@@ -3,484 +3,157 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clinton_Ndegwa </title>
-    <!-- Bootstrap CSS CDN -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <!-- Font Awesome CDN for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!-- Link to your external stylesheet -->
+    <meta name="description" content="Clinton Ndegwa is a software and data engineer offering web development, data systems, automation, and visual design.">
+    <title>Clinton Ndegwa | Software &amp; Data Engineer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <!-- Load Vue.js from CDN (development version) -->
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 </head>
-<body class="bg-dark text-white">
-    <div id="app" v-cloak class="d-flex flex-column min-vh-100 position-relative">
-        <!-- Scroll Progress Indicator -->
-        <div id="scroll-progress-bar" class="fixed-top"></div>
-        <button id="backToTop" title="Back to top">
-            <i class="fas fa-arrow-up"></i>
-        </button>
-
-        <!-- Navigation Bar -->
-        <nav class="navbar navbar-expand-lg sticky-top">
-            <div class="container d-flex justify-content-center">
-                <ul class="navbar-nav flex-row">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#home">
-                            <i class="fas fa-home me-2"></i>
-                           Home
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#expertise">
-                            <i class="fas fa-star me-2"></i>
-                           Expertise
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#projects">
-                            <i class="fas fa-folder-open me-2"></i>
-                           Projects
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contact">
-                            <i class="fas fa-envelope me-2"></i>
-                           Contact
-                        </a>
-                    </li>
-                </ul>
-            </div>
+<body>
+    <header class="site-header">
+        <a class="wordmark" href="#top" aria-label="Clinton Ndegwa, home">CN<span>.</span></a>
+        <nav aria-label="Main navigation">
+            <a href="#work">Work</a>
+            <a href="#services">Services</a>
+            <a href="#about">About</a>
+            <a class="nav-contact" href="#contact">Let's talk <span aria-hidden="true">↗</span></a>
         </nav>
+    </header>
 
-        <!-- Main Content Area with all sections always present in the DOM -->
-        <main class="flex-grow-1">
-            <!-- Home Section -->
-            <section id="home" class="section-content bg-app-black">
-                <div class="container home-container">
-                    <div class="row align-items-center gy-5">
-                        <div class="col-lg-5 reveal-on-scroll">
-                            <div class="home-hero-copy">
-                                <p class="eyebrow text-uppercase mb-3">Design • Data • Development</p>
-                                <h1>Building digital experiences that look sharp and work smart.</h1>
-                                <p class="lead">
-                                    I create visual identities, data systems, and software products that turn ideas into measurable impact for brands, teams, and growing businesses.
-                                </p>
-                                <div class="d-flex flex-wrap gap-3 mt-4">
-                                    <a class="btn" href="#expertise">Explore Expertise</a>
-                                    <a class="btn btn-secondary" href="#contact">Book a Project</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-7 text-center reveal-on-scroll">
-                            <img src="./assets/images/CMN.png" alt="Brand visual" class="img-fluid rounded-4 home-hero-image shadow-lg">
-                        </div>
-                    </div>
+    <main id="top">
+        <section class="hero page-wrap" aria-labelledby="hero-title">
+            <div class="hero-copy">
+                <p class="eyebrow"><span class="status-dot"></span> Software · Data · Design</p>
+                <h1 id="hero-title">I make digital work <span>work better.</span></h1>
+                <p class="hero-summary">I'm Clinton, a software and data engineer building useful web products, clearer data systems, and thoughtful visual identities.</p>
+                <a class="text-link hero-link" href="#work">Explore selected work <span aria-hidden="true">↓</span></a>
+            </div>
+            <div class="hero-note" aria-label="Areas of focus">
+                <span class="note-mark" aria-hidden="true">✳</span>
+                <p>Good work starts with<br>understanding the problem.</p>
+                <span class="note-index">01 / 03</span>
+            </div>
+            <span class="hero-side-label" aria-hidden="true">INDEPENDENT PRACTICE &nbsp; / &nbsp; 2026</span>
+        </section>
 
-                    <div id="expertise" class="expertise-section mt-5 pt-5 reveal-on-scroll">
-                        <div class="section-heading text-center">
-                            <p class="eyebrow text-uppercase mb-3">Core Expertise</p>
-                            <h2>Three disciplines, one sharper digital edge.</h2>
-                        </div>
-
-                        <div class="row g-4 mt-3 expertise-grid">
-                            <div class="col-lg-4 expertise-column design-column">
-                                <article class="expertise-card design-card" :style="{ backgroundImage: 'linear-gradient(180deg, rgba(14,9,41,0.6), rgba(14,9,41,0.9)), url(./assets/images/drawing.svg)' }">
-                                    <div class="expertise-icon">
-                                        <i class="fas fa-palette"></i>
-                                    </div>
-                                    <h3>Graphic Designer</h3>
-                                    <p>I turn ideas into distinctive brand experiences that look premium, communicate clearly, and leave a memorable impression.</p>
-                                    <ul>
-                                        <li>Brand identity and logo direction</li>
-                                        <li>Campaign visuals and social creative</li>
-                                        <li>Digital layouts and visual systems</li>
-                                    </ul>
-                                    <a href="#contact" class="btn">Request a Design Brief</a>
-                                </article>
-                            </div>
-
-                            <div class="col-lg-4 expertise-column data-column">
-                                <article class="expertise-card data-card highlight-card" :style="{ backgroundImage: 'linear-gradient(180deg, rgba(14,9,41,0.64), rgba(14,9,41,0.93)), url(./assets/images/J-Media.png)' }">
-                                    <div class="expertise-icon">
-                                        <i class="fas fa-database"></i>
-                                    </div>
-                                    <h3>Data Engineering</h3>
-                                    <p>I build the structure behind smarter decisions—clean data systems, reliable flows, and better visibility across the business.</p>
-                                    <ul>
-                                        <li>Database architecture and optimization</li>
-                                        <li>Data migration, cleanup, and modeling</li>
-                                        <li>Automation and reporting infrastructure</li>
-                                    </ul>
-                                    <a href="#contact" class="btn">Discuss a Data System</a>
-                                </article>
-                            </div>
-
-                            <div class="col-lg-4 expertise-column software-column">
-                                <article class="expertise-card software-card" :style="{ backgroundImage: 'linear-gradient(180deg, rgba(14,9,41,0.62), rgba(14,9,41,0.94)), url(./assets/images/JM-Wallpaper.png)' }">
-                                    <div class="expertise-icon">
-                                        <i class="fas fa-code"></i>
-                                    </div>
-                                    <h3>Software Development</h3>
-                                    <p>I design and build digital tools that turn business ideas into usable products, efficient workflows, and measurable growth.</p>
-                                    <ul>
-                                        <li>Web apps and business interfaces</li>
-                                        <li>Custom workflows and process automation</li>
-                                        <li>Scalable product experiences</li>
-                                    </ul>
-                                    <a href="#contact" class="btn">Plan a Software Build</a>
-                                </article>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Projects Section (inserted between Home and Services) -->
-            <section id="projects" class="section-content bg-app-black">
-                <div class="container text-center">
+        <section class="work-section" id="work" aria-labelledby="work-title">
+            <div class="page-wrap">
+                <div class="section-heading">
                     <div>
-                        <h1 class="reveal-on-scroll">
-                            Selected Work by Specialty
-                        </h1>
-
-                        <div class="project-filter-bar reveal-on-scroll" role="tablist" aria-label="Project categories">
-                            <button v-for="category in projectCategories" :key="category.key" type="button" class="project-filter" :class="{ active: selectedProjectCategory === category.key }" @click="selectedProjectCategory = category.key">
-                                {{ category.label }}
-                            </button>
-                        </div>
-
-                        <div class="row justify-content-center mt-4">
-                            <div class="col-12 col-lg-8">
-                                <div id="projectCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-touch="true">
-                                    <div class="carousel-indicators">
-                                        <button v-for="(p, index) in filteredProjects" :key="`indicator-${p.url}`" type="button" data-bs-target="#projectCarousel" :data-bs-slide-to="index" :class="{ active: index === 0 }" :aria-current="index === 0 ? 'true' : undefined" :aria-label="`Slide ${index + 1}`"></button>
-                                    </div>
-                                    <div class="carousel-inner">
-                                        <div class="carousel-item" v-for="(p, index) in filteredProjects" :key="p.url" :class="{ active: index === 0 }">
-                                            <div class="project-card position-relative reveal-on-scroll mx-auto">
-                                                <span class="screenshot-badge">{{ p.categoryLabel }}</span>
-                                                <a :href="p.url" target="_blank" rel="noopener noreferrer" class="d-block">
-                                                    <img :src="p.screenshot" :alt="p.name" class="screenshot-img img-fluid rounded-3 shadow-sm" loading="lazy">
-                                                </a>
-                                                <div class="mt-3 text-start project-copy">
-                                                    <h5 class="mb-1">{{ p.name }}</h5>
-                                                    <p class="mb-0">{{ p.desc }}</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <button class="carousel-control-prev" type="button" data-bs-target="#projectCarousel" data-bs-slide="prev">
-                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                        <span class="visually-hidden">Previous</span>
-                                    </button>
-                                    <button class="carousel-control-next" type="button" data-bs-target="#projectCarousel" data-bs-slide="next">
-                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                        <span class="visually-hidden">Next</span>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
+                        <p class="eyebrow">A few things I've made</p>
+                        <h2 id="work-title">Selected work<span class="accent">.</span></h2>
                     </div>
+                    <span class="section-count">01 — 04</span>
                 </div>
-            </section>
 
-            <!-- Services Section -->
-            <section id="services" class="section-content bg-app-black">
-                <div class="container text-start">
-                    <div>
-                        <h1 class="text-start reveal-on-scroll">
-                            Selected Offerings
-                        </h1>
-
-                        <div class="row services-row">
-                            <div class="col-lg-4">
-                                <div class="card text-white card-hover-effect reveal-on-scroll">
-                                    <div class="card-body d-flex flex-column">
-                                        <h3 class="card-title">
-                                            <i class="fas fa-palette me-2"></i>
-                                            Brand & Visual Design
-                                        </h3>
-                                        <p class="card-text flex-grow-1">
-                                            Strong visual branding and creative design work for businesses that need memorable identity systems, campaign assets, and digital presentations.
-                                        </p>
-                                        <div>
-                                            <p class="card-text2">
-                                                Price: 
-                                                <span>
-                                                    From Ksh. 8,000+
-                                                </span>
-                                            </p>
-                                            <a @click="requestQuote('Brand & Visual Design')" class="btn">
-                                                Request a Quote
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4">
-                                <div class="card text-white card-hover-effect reveal-on-scroll">
-                                    <div class="card-body d-flex flex-column">
-                                        <h3 class="card-title">
-                                            <i class="fas fa-database me-2"></i>
-                                            Data Engineering & Automation
-                                        </h3>
-                                        <p class="card-text flex-grow-1">
-                                            Structured data systems, clean database design, migration support, and process automation that turn chaos into clarity and usable insight.
-                                        </p>
-                                        <div>
-                                            <p class="card-text2">
-                                                Price: 
-                                                <span>
-                                                    From Ksh. 15,000+
-                                                </span>
-                                            </p>
-                                            <a @click="requestQuote('Data Engineering & Automation')" class="btn">
-                                                Request a Quote
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4">
-                                <div class="card text-white card-hover-effect reveal-on-scroll">
-                                    <div class="card-body d-flex flex-column">
-                                        <h3 class="card-title">
-                                            <i class="fas fa-code me-2"></i>
-                                            Software Development
-                                        </h3>
-                                        <p class="card-text flex-grow-1">
-                                            End-to-end digital solutions for web applications, product interfaces, and internal systems built to be elegant, efficient, and practical.
-                                        </p>
-                                        <div>
-                                            <p class="card-text2">
-                                                Price: 
-                                                <span>
-                                                    From Ksh. 20,000+
-                                                </span>
-                                            </p>
-                                            <a @click="requestQuote('Software Development')" class="btn">
-                                                Request a Quote
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                <div class="project-grid">
+                    <article class="project-card project-card-featured">
+                        <a class="project-image" href="https://cmndegwa.github.io/P-TWS/" target="_blank" rel="noopener noreferrer" aria-label="View The Web Sphere project">
+                            <img src="assets/images/TWS.png" alt="The Web Sphere creative studio website" loading="lazy">
+                            <span class="image-arrow" aria-hidden="true">↗</span>
+                        </a>
+                        <div class="project-caption">
+                            <div><span class="project-type">Brand &amp; visual design</span><h3>The Web Sphere</h3></div>
+                            <p>A bold creative-studio website bringing identity, web design, and visual storytelling together.</p>
                         </div>
-                    </div>
-                </div>
-            </section>
+                    </article>
 
-            <!-- Contact Section -->
-            <section id="contact" class="section-content bg-app-black">
-                <div class="container p-4 text-start">
-                    <div>
-                        <h1 class=" contact-title text-center reveal-on-scroll">
-                            Get In Touch
-                        </h1>
-                        <p class="contact-title-2 text-start reveal-on-scroll">
-                            Please use the links below to request a quote or send a message.
-                        </p>
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-md-4 mb-4 position-relative">
-                                    <div class="card-hover-group position-relative reveal-on-scroll">
-                                        <div class="social-media-link card-hover-effect"
-                                             @mouseenter="showContactButton('whatsapp')"
-                                             @mouseleave="hideContactButton">
-                                            <a href="https://wa.me/254712629497?text=Hello%20I%20would%20like%20to%20request%20a%20quote" target="_blank" class="social-link">
-                                                <i class="fab fa-whatsapp"></i>
-                                                <span>Whatsapp</span>
-                                            </a>
-                                            <p>
-                                                Reach out for quick responses, support, or to discuss your project needs directly.
-                                            </p>
-                                        </div>
-                                        <button
-                                            v-if="visibleContactBtn === 'whatsapp'"
-                                            class="btn social-btn slide-btn"
-                                            @mouseenter="keepContactButton('whatsapp')"
-                                            @mouseleave="leaveContactButton"
-                                            @click="openSocial('whatsapp')"
-                                            type="button"
-                                            style="position: absolute; left: 0; right: 0; margin: auto; z-index: 2;"
-                                        >
-                                            Message on WhatsApp
-                                        </button>
-                                    </div>
-                                </div>
-                                <div class="col-md-4 mb-4 position-relative">
-                                    <div class="card-hover-group position-relative reveal-on-scroll">
-                                        <div class="social-media-link card-hover-effect"
-                                             @mouseenter="showContactButton('linkedin')"
-                                             @mouseleave="hideContactButton">
-                                            <a href="https://www.linkedin.com/in/clinton-m-n/" target="_blank" class="social-link">
-                                                <i class="fab fa-linkedin"></i>
-                                                <span>LinkedIn</span>
-                                            </a>
-                                            <p>
-                                                Connect for professional networking, industry insights, and to explore collaboration opportunities.
-                                            </p>
-                                        </div>
-                                        <button
-                                            v-if="visibleContactBtn === 'linkedin'"
-                                            class="btn social-btn slide-btn"
-                                            @mouseenter="keepContactButton('linkedin')"
-                                            @mouseleave="leaveContactButton"
-                                            @click="openSocial('linkedin')"
-                                            type="button"
-                                            style="position: absolute; left: 0; right: 0; margin: auto; z-index: 2;"
-                                        >
-                                            Message on LinkedIn
-                                        </button>
-                                    </div>
-                                </div>
-                                <div class="col-md-4 mb-4 position-relative">
-                                    <div class="card-hover-group position-relative reveal-on-scroll">
-                                        <div class="social-media-link card-hover-effect"
-                                             @mouseenter="showContactButton('twitter')"
-                                             @mouseleave="hideContactButton">
-                                            <a href="https://twitter.com/M_Ndegwa" target="_blank" class="social-link">
-                                                <i class="fab fa-twitter"></i>
-                                                <span>Twitter</span>
-                                            </a>
-                                            <p>
-                                                Get quick updates, tech insights, and engage in real-time conversations.
-                                            </p>
-                                        </div>
-                                        <button
-                                            v-if="visibleContactBtn === 'twitter'"
-                                            class="btn social-btn slide-btn"
-                                            @mouseenter="keepContactButton('twitter')"
-                                            @mouseleave="leaveContactButton"
-                                            @click="openSocial('twitter')"
-                                            type="button"
-                                            style="position: absolute; left: 0; right: 0; margin: auto; z-index: 2;"
-                                        >
-                                            Message on Twitter
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6 mb-4 position-relative">
-                                    <div class="card-hover-group position-relative reveal-on-scroll">
-                                        <div class="document-download-link card-hover-effect"
-                                             @mouseenter="showDownloadButton('Whitepaper')"
-                                             @mouseleave="hideDownloadButton">
-                                            <a class="social-link" @click.prevent>
-                                                <i class="fas fa-file-pdf"></i>
-                                                <span>Download a Book</span>
-                                            </a>
-                                            <p>
-                                                Dive deep into methodologies, case studies, and the technologies leveraged to deliver exceptional results.
-                                            </p>
-                                        </div>
-                                        <button
-                                            v-if="visibleDownloadBtn === 'Whitepaper'"
-                                            class="btn download-btn slide-btn"
-                                            @mouseenter="keepDownloadButton('Whitepaper')"
-                                            @mouseleave="leaveDownloadButton('Whitepaper')"
-                                            @click="openDownloadModal('Whitepaper', 'Whitepaper.docx')"
-                                            type="button"
-                                            style="position: absolute; left: 0; right: 0; margin: auto; z-index: 2;"
-                                        >
-                                            Request Whitepaper
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
+                    <article class="project-card">
+                        <a class="project-image workflow-preview" href="https://github.com/CMNDEGWA/SQL/tree/main/IMS" target="_blank" rel="noopener noreferrer" aria-label="View Inventory Management System on GitHub">
+                            <span class="workflow-label">INVENTORY / DATA FLOW</span>
+                            <span class="workflow-line"><span>STOCK</span><i aria-hidden="true">→</i><span>MOVES</span><i aria-hidden="true">→</i><span>REPORTS</span></span>
+                            <span class="workflow-foot"><span>SQL · DATA INTEGRITY</span><span class="workflow-spark" aria-hidden="true">↗</span></span>
+                        </a>
+                        <div class="project-caption">
+                            <div><span class="project-type">Data systems</span><h3>Inventory Management System</h3></div>
+                            <p>A database-backed stock workflow that tracks movement and helps prevent invalid inventory changes.</p>
                         </div>
-                    </div>
+                    </article>
+
+                    <article class="project-card">
+                        <a class="project-image" href="https://cmndegwa.github.io/Yanken-Store/" target="_blank" rel="noopener noreferrer" aria-label="View E-Commerce Storefront">
+                            <img src="assets/images/Y-Workstations.jpg" alt="E-commerce storefront for configurable workstations" loading="lazy">
+                            <span class="image-arrow" aria-hidden="true">↗</span>
+                        </a>
+                        <div class="project-caption">
+                            <div><span class="project-type">Web development</span><h3>E-Commerce Storefront</h3></div>
+                            <p>A product-led storefront designed around clear browsing and a straightforward shopping journey.</p>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <a class="project-image" href="https://cmndegwa.github.io/Yanken/" target="_blank" rel="noopener noreferrer" aria-label="View Yanken IT Outsourcing Portal">
+                            <img src="assets/images/Yanken-IT.jpg" alt="Yanken IT outsourcing company website" loading="lazy">
+                            <span class="image-arrow" aria-hidden="true">↗</span>
+                        </a>
+                        <div class="project-caption">
+                            <div><span class="project-type">Web development</span><h3>Yanken IT Outsourcing</h3></div>
+                            <p>A service website that makes the offer clear and gives prospective clients a direct path to get in touch.</p>
+                        </div>
+                    </article>
                 </div>
-            </section>
-
-        </main>
-
-        <!-- Footer -->
-        <footer class="bg-black text-white p-3 text-center mt-auto">
-            <div class="container">
-                <p>&copy; muthunguclintn@gmail.com || All rights reserved.</p>
             </div>
-        </footer>
+        </section>
 
-        <!-- Quote Request Modal -->
-        <div class="modal fade glass-panel" id="quoteModal" tabindex="-1" aria-labelledby="quoteModalLabel" aria-hidden="true" v-cloak>
-          <div class="modal-dialog">
-            <div class="modal-content bg-dark text-white">
-              <div class="modal-header">
-                <h5 class="modal-title" id="quoteModalLabel">Request a Quote</h5>
-                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-              <div class="modal-body">
-                <form id="quoteForm" @submit.prevent="submitQuoteRequest" method="POST">
-                  <input type="hidden" name="service" :value="selectedService">
-                  <div class="mb-3">
-                    <label class="form-label">Service</label>
-                    <input type="text" class="form-control" v-model="selectedService" readonly>
-                  </div>
-                  <div class="mb-3">
-                    <label for="quoteName" class="form-label">Your Name</label>
-                    <input type="text" class="form-control" id="quoteName" name="name" v-model="quoteName" required>
-                  </div>
-                  <div class="mb-3">
-                    <label for="quoteEmail" class="form-label">Your Email</label>
-                    <input type="email" class="form-control" id="quoteEmail" name="email" v-model="quoteEmail" required>
-                  </div>
-                  <div class="mb-3">
-                    <label for="quoteDetails" class="form-label">Project Details</label>
-                    <textarea class="form-control" id="quoteDetails" name="details" v-model="quoteDetails" rows="3" required></textarea>
-                  </div>
-                  <div v-if="quoteSuccess" class="alert alert-success" role="alert">
-                    {{ quoteSuccess }}
-                  </div>
-                  <div v-if="quoteError" class="alert alert-danger" role="alert">
-                    {{ quoteError }}
-                  </div>
-                  <div class="d-grid">
-                    <button type="submit" class="btn btn-success">Send Request</button>
-                  </div>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
-
-         <!-- Download Email Modal -->
-        <div class="modal fade glass-panel" id="downloadEmailModal" tabindex="-1" aria-labelledby="downloadEmailModalLabel" aria-hidden="true" v-cloak>
-        <div class="modal-dialog">
-            <div class="modal-content bg-dark text-white">
-            <div class="modal-header">
-                <h5 class="modal-title" id="downloadEmailModalLabel">
-                Request <span v-text="selectedDownloadDoc"></span>
-                </h5>
-                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-            <form id="downloadForm" @submit.prevent="submitDownloadRequest">
-                <div class="mb-3">
-                <label for="downloadEmail" class="form-label">Email address</label>
-                <input type="email" class="form-control" id="downloadEmail" name="email" v-model="downloadEmail" placeholder="Enter your email" required>
-                <div id="downloadError" class="text-danger mt-2" style="display:none;"></div>
+        <section class="services-section page-wrap" id="services" aria-labelledby="services-title">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">What I can help with</p>
+                    <h2 id="services-title">Services<span class="accent">.</span></h2>
                 </div>
-                <button type="submit" class="btn btn-success">Download Document</button>
-            </form>
+                <p class="section-intro">Practical skills for ideas that need to move from concept to something people can use.</p>
             </div>
+            <div class="service-list">
+                <article class="service-row">
+                    <span class="service-number">01</span>
+                    <h3>Brand &amp; Visual Design</h3>
+                    <p>Visual identities, campaign creative, and digital design with a clear point of view.</p>
+                    <span class="service-arrow" aria-hidden="true">↗</span>
+                </article>
+                <article class="service-row">
+                    <span class="service-number">02</span>
+                    <h3>Data Engineering &amp; Automation</h3>
+                    <p>Structured data workflows, reliable databases, and reporting that brings useful information into focus.</p>
+                    <span class="service-arrow" aria-hidden="true">↗</span>
+                </article>
+                <article class="service-row">
+                    <span class="service-number">03</span>
+                    <h3>Software Development</h3>
+                    <p>Web applications and business tools built around real needs and straightforward experiences.</p>
+                    <span class="service-arrow" aria-hidden="true">↗</span>
+                </article>
             </div>
-        </div>
-        </div>
+        </section>
 
-    </div>
+        <section class="about-section" id="about" aria-labelledby="about-title">
+            <div class="page-wrap about-inner">
+                <p class="eyebrow">A little about me</p>
+                <div>
+                    <h2 id="about-title">Curious by nature.<br><span>Useful by design.</span></h2>
+                    <p>I'm Clinton Ndegwa, a software and data engineer who enjoys turning complex challenges into clear, dependable solutions. I work across software, data, and visual design, staying focused on what helps people get things done.</p>
+                </div>
+            </div>
+        </section>
 
-    <!-- Bootstrap Bundle with Popper -->
-     
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    
-    <!-- Link to your external JavaScript file -->
-    <script src="script.js"></script>
+        <section class="contact-section page-wrap" id="contact" aria-labelledby="contact-title">
+            <p class="eyebrow">Have something in mind?</p>
+            <h2 id="contact-title">Let's make it<br><span>work better.</span></h2>
+            <div class="contact-actions">
+                <a class="contact-email" href="mailto:muthunguclintn@gmail.com">muthunguclintn@gmail.com <span aria-hidden="true">↗</span></a>
+                <div class="social-links">
+                    <a href="https://wa.me/254712629497" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+                    <a href="https://www.linkedin.com/in/clinton-m-n/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                    <a href="https://github.com/CMNDEGWA" target="_blank" rel="noopener noreferrer">GitHub</a>
+                </div>
+            </div>
+        </section>
+    </main>
 
-    <style>
-        [v-cloak] { display: none; }
-    </style>
+    <footer class="site-footer page-wrap">
+        <a class="wordmark" href="#top" aria-label="Back to top">CN<span>.</span></a>
+        <p>Software, data &amp; design, with care.</p>
+        <span>© Clinton Ndegwa 2026</span>
+    </footer>
 </body>
 </html>
