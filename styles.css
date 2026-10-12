@@ -1,1138 +1,791 @@
-/* =========================
-   GLOBAL & ROOT VARIABLES
-   =========================
-   - :root: Defines CSS variables for theme colors, used throughout the site for consistency.
-   - body: Sets the main font and enables smooth scrolling for all HTML content.
-*/
-@import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Savate:ital,wght@0,200..900;1,200..900&display=swap');
-
-:root  {
-    --foreground-color: #92ACFF;
-    --extra-color: #92ACFF;
-    --background-color: #0E0929;
-    --text-color: rgba(146,172,255,0.95);
-    --paragraph-color: rgba(146,172,255,0.85);
-    --muted-color: rgba(146,172,255,0.55);
-    --surface-color: rgba(14,9,41,0.82);
-    --dark-color: #000000;
+:root {
+    color-scheme: light;
+    --paper: #f6f7f2;
+    --white: #ffffff;
+    --ink: #202923;
+    --muted: #657069;
+    --line: #d9ded8;
+    --accent: #d9583b;
+    --green: #244f3e;
+    --lime: #d6ed78;
+    --display-font: "Space Grotesk", sans-serif;
+    --body-font: "DM Sans", sans-serif;
 }
 
-.bg-app-black {
-    background-color: var(--background-color);
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
 }
 
 body {
-    font-family: "Newsreader", serif;
-    scroll-behavior: smooth;
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--body-font);
+    -webkit-font-smoothing: antialiased;
 }
 
-/* =========================
-   BACK TO TOP BUTTON STYLES
-   =========================
-   - #backToTop: Styles the "Back to Top" button, including visibility, position, and hover effects.
-*/
-
-#backToTop {
-  display: none;
-  position: fixed;
-  bottom: 40px;
-  right: 40px;
-  z-index: 99;
-  font-size: 24px;
-  border: none;
-  font-size: 21px;
-  outline: none;
-  background: var(--background-color);
-  color: var(--text-color);
-  cursor: pointer;
-  padding: 7px 28px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-  overflow: hidden; /* Needed for the animation */
-  position: fixed;
-  border-top-right-radius: 14px;
-  border-top-left-radius: 14px;
-  transition: color 0.7s cubic-bezier(0.4,0,0.2,1);
+a {
+    color: inherit;
 }
 
-#backToTop::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 2px; /* Start as a border */
-  background: var(--extra-color); /* The animated background color */
-  z-index: -1;
-  transition: height 0.7s cubic-bezier(0.4,0,0.2,1);
+.page-wrap,
+.site-header {
+    width: min(1160px, calc(100% - 64px));
+    margin-inline: auto;
 }
 
-#backToTop::after {
-  height: var(--backtotop-bg-height, 0%); /* Animate to fill the button */
-}
-
-/* =========================
-   NAVIGATION BAR STYLES
-   =========================
-   - .navbar: Styles the <nav> element for the main navigation bar, including background, height, and border.
-   - .navbar-nav, .nav-item, .nav-link: Style the <ul> and <li> navigation structure, including hover/focus effects and icon spacing.
-   - .fas: Targets Font Awesome icons inside nav links.
-*/
-.navbar {
-    height: 14vh;
-    background: rgba(14, 9, 41, 0.85); /* semi-transparent background */
-    backdrop-filter: blur(8px);
-    border-bottom: 1px solid var(--foreground-color);
-    cursor: pointer;
-}
-
-.navbar-nav {
-    font-family: "Newsreader", sans-serif;
-    font-weight: 600;
-}
-
-.navbar-nav .nav-item {
-    position: relative;
-    padding-right: 21px;
-    margin-right: 14px;
-}
-
-.navbar-nav .nav-item::before {
-    /* L shape at bottom left */
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 21%;
-    height: 30%;
-    border-left: 1.4px solid var(--paragraph-color);
-    border-bottom: 1.4px solid var(--paragraph-color);
-    border-radius: 0 0 0 7px;
-}
-
-.navbar-nav .nav-item::after {
-    /* Inverted L at top right */
-    content: "";
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: 70%;
-    height: 50%;
-    border-top: 1.4px solid var(--paragraph-color);
-    border-right: 1.4px solid var(--paragraph-color);
-    border-radius: 0 7px 0 0;
-}
-
-.navbar-nav .nav-item::before,
-.navbar-nav .nav-item::after {
-    transition: width 0.6s cubic-bezier(0.4,0,0.2,1), height 0.6s cubic-bezier(0.4,0,0.2,1);
-}
-
-.navbar-nav .nav-item::before {
-    /* L shape at bottom left */
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 21%;
-    height: 30%;
-    border-left: 1.4px solid var(--paragraph-color);
-    border-bottom: 1.4px solid var(--paragraph-color);
-    border-radius: 0 0 0 7px;
-}
-
-.navbar-nav .nav-item::after {
-    /* Inverted L at top right */
-    content: "";
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: 70%;
-    height: 50%;
-    border-top: 1.4px solid var(--paragraph-color);
-    border-right: 1.4px solid var(--paragraph-color);
-    border-radius: 0 7px 0 0;
-}
-
-.navbar-nav .nav-item:hover::before,
-.navbar-nav .nav-item:focus-within::before {
-    width: 100%;
-    height: 100%;
-}
-
-.navbar-nav .nav-item:hover::after,
-.navbar-nav .nav-item:focus-within::after {
-    width: 100%;
-    height: 100%;
-}
-
-.navbar-nav .nav-item.active-scrollspy::before,
-.navbar-nav .nav-item.active-scrollspy::after {
-    width: 100%;
-    height: 100%;
-}
-
-.navbar-nav .nav-item.active-scrollspy .nav-link {
-    color: var(--text-color);
-}
-
-.navbar-nav .nav-link {
-    color: var(--extra-color);
-    font-size: 1rem;
-    padding: 0.5rem 1rem;
-    transition: color 0.3s ease;
-}
-
-.navbar-nav .nav-link {
-    color: var(--extra-color);
-    font-size: 1rem;
-    padding: 0.5rem 1rem;
-    transition: color 0.3s ease;
-}
-
-.navbar-nav .nav-link:hover,
-.navbar-nav .nav-item:hover .nav-link,
-.navbar-nav .nav-item:focus-within .nav-link {
-    color: var(--text-color);
-}
-
-
-.navbar-nav .nav-link .fas {
-    padding: 0 7px;
-}
-
-/* =========================
-   HOME SECTION STYLES
-   =========================
-   - #home: Styles the <section id="home">, including headings, subheadings, and text blocks.
-   - .home-container, .choose-engineer-title, .set-apart-title, .tech-game-title: Style various headings and containers in the home section.
-   - .span, .fas: Style highlighted text and icons within the home section.
-*/
-#home {
-    padding: 0;
-}
-
-.home-container {
-    padding: 2.25rem 0 1.5rem;
-    margin: 3rem 0;
-}
-
-#home h1{
-    font-size: clamp(2rem, 4vw, 3.2rem);
-    color: var(--text-color);
-    margin: 1.4rem 0 1.8rem;
-    letter-spacing: 0.06em;
-    text-decoration: underline;
-    text-underline-offset: 14px;
-}
-
-#services h1 {
-    color: var(--text-color);
-    margin: 2.2rem 0 2.6rem;
-    letter-spacing: 0.05em;
-    text-decoration: underline;
-    text-underline-offset: 14px;
-}
-
-#contact h1 {
-    color: var(--text-color);
-    margin: 2.2rem 0 2.6rem;
-    letter-spacing: 0.05em;
-    text-decoration: underline;
-    text-underline-offset: 14px;
-}
-
-#home .choose-engineer-title {
-    font-size: 1.4rem;
-    color: var(--text-color);
-    margin: 2.1rem 0;
-    letter-spacing: 2px;
-    text-decoration: underline;
-    text-underline-offset: 14px;
-}
-
-#home .set-apart-title {
-    font-size: 1.4rem;
-    color: var(--text-color);
-    margin-top: 4.9rem;
-    padding-bottom: 7px;
-    letter-spacing: 2px;
-    text-decoration: underline;
-    text-underline-offset: 14px;
-}
-
-#home .set-apart-title-2 {
-    margin-bottom: 4.9rem;
-    font-size: 1rem;
-    font-weight: 400;
-    color: var(--extra-color);
-    font-family: "Savate", sans-serif;
-}
-
-#home .tech-game-title {
-    font-size: 1.4rem;
-    color: var(--text-color);
-    margin-top: 4.9rem;
-    padding-bottom: 7px;
-    letter-spacing: 2px;
-    text-decoration: underline;
-    text-underline-offset: 14px;
-}
-
-#referrals .referral-title {
-    font-size: 2.1rem;
-    color: var(--text-color);
-    padding-bottom: 7px;
-    letter-spacing: 2px;
-    text-decoration: underline;
-    text-underline-offset: 14px;
-}
-
-#referrals .referral-title-2 {
-    margin: 2.1rem 0;
-    font-size: 1rem;
-    font-weight: 400;
-    color: var(--extra-color);
-    font-family: "Savate", sans-serif;
-}
-
-#home .fa-arrow-turn-down {
-    color: var(--text-color);
-    font-size: 1rem;
-    padding-left: 14px;
-}
-
-#home .home-text {
-    font-size: 1.2rem;
-    color: var(--paragraph-color);
-    margin: 4.9rem 0;
-    line-height: 1.6;
-}
-
-.home-container .choose-engineer-text {
-    font-size: 1.1rem;
-    color: var(--paragraph-color);
-    margin: 2.1rem 0;
-}
-
-.home-container .choose-engineer-text p {
-    border-bottom: 1.4px solid var(--extra-color);
-    padding: 36px 0;
-}
-
-.home-container .set-apart-text p {
-    border-bottom: 1.4px solid var(--extra-color);
-    padding: 36px 0;
-}
-
-#home .home-container .tech-game-text {
-    border-bottom: 1.4px solid var(--extra-color);
-    padding: 36px 0;
-}
-
-#home .span {
-    color: var(--extra-color);
-    font-family: 'Savate', sans-serif;
-    font-weight: 600;
-    text-transform: uppercase;
-}
-
-#home .span .fas {
-    color: var(--extra-color);
-    font-size: 1.2rem;
-    margin-bottom: 42px;
-}
-
-#home .home-hero-copy h1 {
-    text-decoration: none;   
-}
-
-/* =========================
-   SERVICES SECTION STYLES
-   =========================
-   - #services: Styles the <section id="services"> and its child elements.
-   - .services-row, .card, .card-body: Style the Bootstrap card layout for service offerings.
-   - .btn: Styles the service action buttons.
-*/
-#services .services-row {
-    margin-top: 3rem;
-}
-
-#services .services-row .card {
-    background: var(--surface-color);
-    border: none;
-    margin: 2rem;
-}
-
-#services .services-row .card .card-body {
-    padding: 2rem;
-}
-
-#services .services-row .card .card-body h3 {
-    color: var(--text-color);
-    font-size: 1.4rem;
-    margin-bottom: 1rem;
-}
-
-#services .services-row .card .card-body h3 i {
-    color: var(--extra-color);
-    padding-right: 0.7rem;
-    transition: color 0.7s ease;
-}
-
-#services .services-row .card .card-body:hover i {
-    color: var(--text-color);
-}
-
-#services .services-row .card .card-body .card-text {
-    color: var(--paragraph-color);
-    font-size: 1rem;
-    line-height: 1.6;
-    letter-spacing: 1.4px;
-    padding: 1.4rem 0;
-}
-
-#services .services-row .card .card-body .card-text2 {
-    color: var(--paragraph-color);
-    font-size: 1.2rem;
-    font-weight: 400;
-}
-
-#services .services-row .card .card-body .card-text2 span {
-    color: var(--text-color);
-    font-family: 'Savate', sans-serif;
-    font-weight: 600;
-    text-transform: uppercase;
-    padding-left: .7rem;
-    font-size: 1rem;
-}
-
-#services .services-row .card .card-body .btn {
-    color: var(--dark-color);
-    text-transform: uppercase;
-    font-weight: 600;
-    font-family: 'Savate', sans-serif;
-    background-color: var(--extra-color);
-    border: none;
-    padding: 0.7rem 1.4rem;
-    transition: background-color 0.7s ease, color 0.3s ease;
-}
-
-#services .services-row .card .card-body .btn:hover {
-    background-color: var(--text-color);
-    color: var(--dark-color);
-}
-
-.section-content {
-    min-height: calc(100vh - 4rem);
+.site-header {
+    min-height: 86px;
     display: flex;
     align-items: center;
-    justify-content: center;
-    padding: clamp(1.2rem, 3vw, 2.5rem);
-    text-align: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--line);
 }
 
-.home-hero-copy .eyebrow {
-    letter-spacing: 0.35em;
-    color: var(--foreground-color);
-    opacity: 0.9;
+.wordmark {
+    color: var(--ink);
+    font: 700 1.55rem/1 var(--display-font);
+    letter-spacing: 0;
+    text-decoration: none;
+}
+
+.wordmark span,
+.accent {
+    color: var(--accent);
+}
+
+.site-header nav {
+    display: flex;
+    align-items: center;
+    gap: clamp(20px, 3vw, 42px);
+}
+
+.site-header nav a,
+.social-links a {
+    font-size: 0.88rem;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.site-header nav a:hover,
+.social-links a:hover {
+    color: var(--accent);
+}
+
+.site-header nav .nav-contact {
+    padding: 11px 16px;
+    border: 1px solid var(--ink);
+    border-radius: 2px;
+}
+
+.nav-contact span {
+    margin-left: 8px;
+    color: var(--accent);
+}
+
+.hero {
+    position: relative;
+    min-height: min(690px, calc(100svh - 86px));
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 230px;
+    align-items: center;
+    gap: 48px;
+    padding-block: 90px 112px;
+    animation: enter 700ms ease-out both;
+}
+
+.hero-copy {
+    max-width: 800px;
+}
+
+.eyebrow {
+    margin: 0 0 20px;
+    color: var(--green);
     font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    line-height: 1.4;
+    text-transform: uppercase;
 }
 
-.home-hero-copy h1,
-.home-feature-row h2 {
-    color: var(--foreground-color);
+.status-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    margin-right: 9px;
+    border-radius: 50%;
+    background: var(--accent);
+    vertical-align: 1px;
 }
 
-.home-feature-row {
-    padding: 2rem 0;
+.hero h1,
+.section-heading h2,
+.about-inner h2,
+.contact-section h2 {
+    font-family: var(--display-font);
+    font-weight: 600;
+    letter-spacing: 0;
 }
 
-.home-feature-row .feature-text {
-    text-align: left;
+.hero h1 {
+    max-width: 820px;
+    margin: 0;
+    font-size: clamp(3.4rem, 7.5vw, 6.5rem);
+    line-height: 0.99;
 }
 
-.home-feature-row .feature-text p {
-    color: var(--paragraph-color);
-    line-height: 1.8;
+.hero h1 span {
+    color: var(--green);
 }
 
-.home-feature-row .feature-image img {
-    width: 100%;
-    height: auto;
-    border-radius: 1.25rem;
-    box-shadow: 0 18px 45px rgba(0,0,0,0.25);
+.hero-summary {
+    max-width: 510px;
+    margin: 26px 0 28px;
+    color: var(--muted);
+    font-size: 1.05rem;
+    line-height: 1.75;
 }
 
-.home-feature-row.feature-image .feature-text {
-    margin-top: 1rem;
+.text-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 13px;
+    color: var(--ink);
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-decoration-color: var(--accent);
+    text-underline-offset: 5px;
 }
 
-.feature-grid img {
-    width: 100%;
-    display: block;
-    border-radius: 1rem;
-    object-fit: cover;
-    aspect-ratio: 1 / 1;
+.text-link span {
+    color: var(--accent);
+    font-size: 1.2rem;
 }
 
-.btn {
-    background-color: var(--foreground-color);
-    color: var(--dark-color);
+.hero-note {
+    align-self: end;
+    padding: 19px 0 3px 22px;
+    border-left: 1px solid var(--accent);
+    animation: enter 700ms 130ms ease-out both;
 }
 
-.btn:hover {
-    background-color: rgba(146,172,255,0.85);
-    color: var(--dark-color);
+.note-mark {
+    color: var(--accent);
+    font-size: 2rem;
 }
 
-/* =========================
-   CONTACT SECTION STYLES
-   =========================
-   - #contact: Styles the <section id="contact"> and its child elements.
-   - .social-media-link, .document-download-link: Style the social and download links, including icons and text.
-   - .social-link, i, span: Style anchor tags and icons within contact links.
-*/
-.home-hero-copy h1 {
-    color: var(--text-color);
-    font-size: clamp(2.2rem, 4vw, 4rem);
-    line-height: 0.98;
-    margin: 0.85rem 0 1.1rem;
-    letter-spacing: 0.04em;
+.hero-note p {
+    margin: 14px 0 24px;
+    font: 600 1rem/1.45 var(--display-font);
+}
+
+.note-index,
+.section-count {
+    color: var(--muted);
+    font-size: 0.72rem;
+    font-weight: 600;
+}
+
+.hero-side-label {
+    position: absolute;
+    right: 0;
+    bottom: 28px;
+    color: var(--muted);
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+}
+
+.work-section {
+    padding: 94px 0 108px;
+    background: #e9eee8;
+}
+
+.section-heading {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 32px;
+    margin-bottom: 38px;
+}
+
+.section-heading .eyebrow {
+    margin-bottom: 12px;
 }
 
 .section-heading h2 {
-    color: var(--text-color);
-    font-size: clamp(1.9rem, 2.8vw, 3rem);
-    margin-bottom: 1.25rem;
-    line-height: 1.12;
+    margin: 0;
+    font-size: clamp(2.6rem, 5vw, 4.2rem);
+    line-height: 1;
 }
 
-.expertise-section {
-    margin-top: 4rem;
+.section-count {
+    padding-bottom: 7px;
 }
 
-.expertise-grid {
-    align-items: stretch;
-    margin-top: 1.25rem;
-}
-
-.expertise-column {
-    display: flex;
-}
-
-.design-column {
-    transform: translateY(18px);
-}
-
-.data-column {
-    transform: translateY(-6px);
-}
-
-.software-column {
-    transform: translateY(28px);
-}
-
-.expertise-card {
-    position: relative;
-    overflow: hidden;
-    background-size: cover;
-    background-position: center;
-    border: 1px solid rgba(146, 172, 255, 0.2);
-    border-radius: 1.6rem;
-    padding: clamp(1.4rem, 2vw, 2rem) 1.25rem;
-    min-height: 100%;
-    width: 100%;
-    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.24);
-    transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease, filter 0.35s ease;
-    isolation: isolate;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-}
-
-.expertise-card::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(180deg, rgba(146, 172, 255, 0.08), rgba(14, 9, 41, 0.86));
-    z-index: -1;
-    transition: transform 0.35s ease, opacity 0.35s ease;
-}
-
-.expertise-card:hover {
-    transform: translateY(-10px) scale(1.02);
-    border-color: rgba(146, 172, 255, 0.85);
-    box-shadow: 0 30px 66px rgba(0, 0, 0, 0.42);
-    filter: saturate(1.14);
-}
-
-.expertise-card:hover::before {
-    transform: scale(1.09);
-}
-
-.highlight-card {
-    border-color: rgba(146, 172, 255, 0.9);
-    box-shadow: 0 35px 70px rgba(78, 98, 166, 0.26);
-}
-
-.expertise-icon {
-    width: 72px;
-    height: 72px;
+.project-grid {
     display: grid;
-    place-items: center;
-    border-radius: 22px;
-    background: rgba(146, 172, 255, 0.12);
-    border: 1px solid rgba(146, 172, 255, 0.25);
-    color: var(--extra-color);
-    font-size: 1.8rem;
-    margin-bottom: 1rem;
-    backdrop-filter: blur(12px);
-    transition: transform 0.35s ease, background 0.35s ease, color 0.35s ease;
-}
-
-.expertise-card:hover .expertise-icon {
-    transform: translateY(-3px) rotate(-4deg);
-    background: rgba(146, 172, 255, 0.2);
-    color: #ffffff;
-}
-
-.expertise-card h3 {
-    color: var(--text-color);
-    font-size: 1.8rem;
-    margin-bottom: 1rem;
-}
-
-.expertise-card p {
-    color: var(--paragraph-color);
-    line-height: 1.75;
-    margin-bottom: 1rem;
-    max-width: 28ch;
-}
-
-.expertise-card ul {
-    list-style: none;
-    padding: 0;
-    margin: 0 0 1.5rem;
-    color: var(--paragraph-color);
-}
-
-.expertise-card ul li {
-    position: relative;
-    padding-left: 1.4rem;
-    margin-bottom: 0.7rem;
-    line-height: 1.6;
-}
-
-.expertise-card ul li::before {
-    content: "•";
-    position: absolute;
-    left: 0;
-    color: var(--extra-color);
-    font-size: 1.2rem;
-}
-
-.expertise-card .btn {
-    margin-top: auto;
-    align-self: flex-start;
-}
-
-#contact .contact-title-2 {
-    font-size: 1rem;
-    font-weight: 400;
-    color: var(--extra-color);
-    text-transform: uppercase;
-    font-family: "Savate", sans-serif;
-    margin-bottom: 4rem;
-}
-
-#contact .social-media-link {
-    border-bottom: 1.4px solid var(--text-color);
-    font-size: 1rem;
-    padding: 21px;
-}
-
-#contact .document-download-link {
-    border-bottom: 1.4px solid var(--text-color);
-    font-size: 1rem;
-    padding: 21px;
-    margin-top: 21px;
-}
-
-#contact .social-media-link p {
-    padding-top: 49px;
-    padding-left: 49px;
-    font-family: 'Newsreader', sans-serif;
-}
-
-#contact .document-download-link p {
-    padding-top: 49px;
-    padding-left: 49px;
-    font-family: 'Newsreader', sans-serif;
-}
-
-#contact .social-media-link .social-link {
-    text-decoration: none;
-}
-
-#contact .document-download-link .social-link {
-    text-decoration: none;
-}
-
-#contact .social-media-link .social-link i {
-    color: var(--text-color);
-    font-size: 2.8rem;
-}
-
-#contact .document-download-link .social-link i {
-    color: var(--text-color);
-    font-size: 2.8rem;
-}
-
-#contact .social-media-link:hover i {
-    color: var(--extra-color);
-    transition: color 0.3s ease;
-}
-
-#contact .document-download-link:hover i {
-    color: var(--extra-color);
-    transition: color 0.3s ease;
-}
-
-#contact .social-media-link .social-link span {
-    color: var(--extra-color);
-    font-family: 'Savate', sans-serif;
-    font-weight: 500;
-    text-transform: uppercase;
-    padding-left: 4rem;
-}
-
-#contact .document-download-link .social-link span {
-    color: var(--extra-color);
-    font-family: 'Savate', sans-serif;
-    font-weight: 500;
-    text-transform: uppercase;
-    padding-left: 4rem;
-}
-
-/* =========================
-   REFERRALS SECTION STYLES
-   =========================
-   - #referrals: Styles the <section id="referrals"> and its form elements.
-   - .referral-form, input, form .btn: Style the referral input and submit button.
-*/
-#referrals .referral-form input {
-    border: none;
-    background: var(--extra-color);
-    color: var(--paragraph-color);
-    opacity: .5;
-}
-
-#referrals form .btn {
-    width: 490px;
-    color: var(--dark-color);
-    text-transform: uppercase;
-    font-weight: 600;
-    font-family: 'Savate', sans-serif;
-    background-color: var(--extra-color);
-    border: none;
-    padding: 0.7rem 1.4rem;
-    transition: background-color 0.7s ease, color 0.3s ease;
-}
-
-#referrals form .btn:hover {
-    background-color: var(--text-color);
-    color: var(--dark-color);
-}
-
-/* =========================
-   CARD HOVER EFFECTS
-   =========================
-   - .card-hover-effect: Adds interactive hover effects to service cards.
-*/
-.card-hover-effect {
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    border-color: #198754 !important; /* Ensure border is green */
-}
-
-.card-hover-effect:hover {
-    transform: translateY(-5px); /* Lift card */
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); /* Stronger shadow */
-}
-
-/* =========================
-   QUOTE MODAL STYLES
-   =========================
-   - #quoteModal: Styles the modal dialog for quote requests, including header, form, and alerts.
-*/
-#quoteModal .modal-content {
-    background: #181a1b;
-    color: #fff;
-    border-radius: 1rem;
-    box-shadow: 0 8px 32px 0 rgba(0,0,0,0.5);
-    border: 1px solid #222;
-}
-
-#quoteModal .modal-header {
-    border-bottom: 1px solid #222;
-    background: #181a1b;
-}
-
-#quoteModal .modal-title {
-    color: #6dfc8c;
-    font-weight: 600;
-}
-
-#quoteModal .btn-close {
-    filter: invert(1);
-}
-
-#quoteModal .form-control {
-    background: #23272b;
-    color: #fff;
-    border: 1px solid #444;
-}
-
-#quoteModal .form-control:focus {
-    background: #23272b;
-    color: #fff;
-    border-color: #6dfc8c;
-    box-shadow: 0 0 0 0.2rem rgba(109,252,140,0.15);
-}
-
-#quoteModal .btn-success {
-    background: linear-gradient(90deg, #6dfc8c 0%, #1fa463 100%);
-    border: none;
-    color: #181a1b;
-    font-weight: 600;
-    box-shadow: 0 2px 8px rgba(109,252,140,0.15);
-}
-
-#quoteModal .btn-success:hover {
-    background: linear-gradient(90deg, #1fa463 0%, #6dfc8c 100%);
-    color: #181a1b;
-}
-
-#quoteModal .alert-success {
-    background: #232b23;
-    color: #6dfc8c;
-    border-color: #6dfc8c;
-}
-
-#quoteModal .alert-danger {
-    background: #2b2323;
-    color: #ff6b6b;
-    border-color: #ff6b6b;
-}
-
-/* =========================
-   SLIDE-IN/SLIDE-OUT BUTTON EFFECTS
-   =========================
-   - .slide-btn: Styles the animated button that appears on hover for social/document links and cards.
-   - .card-hover-group: Container for cards with slide-out button effect.
-*/
-.slide-btn {
-  display: block;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.3s, transform 0.3s;
-  width: 100%;
-  margin: 0.5rem auto 0 auto;
-  background: #198754;
-  color: var(--dark-color);
-  border: none;
-  border-radius: 0.3rem;
-  pointer-events: none;
-  position: absolute;
-  left: 0;
-  right: 0;
-  z-index: 2;
-}
-
-.social-media-link:hover + .slide-btn,
-.document-download-link:hover + .slide-btn {
-  opacity: 1;
-  transform: translateY(0);
-  pointer-events: auto;
-}
-
-.slide-btn:hover {
-    color: var(--dark-color);
-    border-bottom: 1.4px solid var(--dark-color);
-}
-
-.position-relative {
-  position: relative !important;
-}
-
-.card-hover-group {
-  position: relative;
-}
-
-.slide-btn {
-  display: block;
-  opacity: 0;
-  pointer-events: none;
-  transform: translateY(20px);
-  transition: opacity 0.3s, transform 0.3s;
-  width: 90%;
-  margin: 0.5rem auto 0 auto;
-  background: #198754;
-  color: #fff;
-  border: none;
-  border-radius: 0.3rem;
-  position: absolute;
-  left: 0; right: 0;
-  z-index: 2;
-  transition-delay: 0s, .7s;
-}
-
-.card-hover-group:hover .slide-btn,
-.card-hover-group:focus-within .slide-btn {
-  opacity: 1;
-  pointer-events: auto;
-  transform: translateY(0);
-  transition-delay: 0s;
-}
-
-.card-hover-group:not(:hover):not(:focus-within) .slide-btn {
-  transition-delay: .7s, 0s;
-}
-
-/* =========================
-   UNIVERSAL FADE-IN AND MOVE-UP ANIMATION
-   =========================
-   - .reveal-on-scroll: Adds fade-in and move-up animation for elements.
-   - .visible: Triggers the animation.
-   - .hidden-up: Adds reverse effect for elements.
-   - .heading: Optional slower effect for headings.
-*/
-.reveal-on-scroll {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: opacity 0.8s cubic-bezier(0.4,0,0.2,1), transform 0.8s cubic-bezier(0.4,0,0.2,1);
-}
-.reveal-on-scroll.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-.reveal-on-scroll.hidden-up {
-    opacity: 0;
-    transform: translateY(-40px);
-}
-
-/* Optional: slower, more pronounced effect for headings */
-.reveal-on-scroll.heading {
-    transition-duration: 1.2s;
-    transform: translateY(60px);
-}
-
-/* =========================
-   GLASS PANEL STYLES
-   =========================
-   - .glass-panel: Adds a frosted glass effect for panels.
-*/
-.glass-panel {
-  background: rgba(255, 255, 255, 0.15);
-  border-radius: 16px;
-  box-shadow: 0 4px 32px rgba(0,0,0,0.1);
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba(255,255,255,0.3);
-  padding: 2rem;
-}
-
-/* =========================
-   RESPONSIVE STYLES (MOBILE)
-   =========================
-   - @media (max-width: 576px): Adjusts layout, font sizes, paddings, and button widths for mobile screens.
-*/
-@media (max-width: 576px) {
-    .navbar-nav.flex-row {
-        flex-direction: row !important;
-        align-items: center !important;
-        width: 80%;
-        justify-content: space-between;
-        gap: 0.2rem;
-    }
-    .navbar-nav .nav-item {
-        width: auto;
-        padding: 7px;
-        margin: 0 7px;
-    }
-    .navbar-nav .nav-link {
-        padding: 0.3rem 0.5rem !important;
-        font-size: 0.85rem !important;
-        text-align: center;
-        min-width: 0;
-    }
-    .navbar .container {
-        justify-content: flex-start !important;
-        padding-left: 0.2rem;
-        padding-right: 0.2rem;
-    }
-
-    .home-container {
-        margin: 1.5rem 0 2rem;
-        padding: 1rem 0;
-    }
-
-    .section-content {
-        padding: 0.9rem !important;
-    }
-
-    .home-hero-copy h1,
-    #home h1, #services h1, #contact h1, #referrals .referral-title {
-        font-size: 1.65rem !important;
-        line-height: 1.08 !important;
-        letter-spacing: 0.04em !important;
-        text-decoration: none !important;
-        margin-top: 0.8rem !important;
-        margin-bottom: 1rem !important;
-    }
-
-    #home .choose-engineer-title,
-    #home .set-apart-title,
-    #home .tech-game-title,
-    .section-heading h2 {
-        font-size: 1.25rem !important;
-        line-height: 1.2 !important;
-    }
-
-    .home-feature-row {
-        padding: 1rem 0;
-    }
-
-    .home-feature-row .feature-text {
-        text-align: center;
-    }
-
-    .home-container .choose-engineer-text p,
-    .home-container .set-apart-text p,
-    #home .home-container .tech-game-text {
-        padding: 12px 0 !important;
-    }
-
-    .design-column,
-    .data-column,
-    .software-column {
-        transform: none !important;
-    }
-
-    .expertise-card {
-        padding: 1.3rem 1rem;
-    }
-
-    .expertise-card h3 {
-        font-size: 1.45rem;
-    }
-
-    .expertise-card p,
-    .expertise-card ul {
-        max-width: none;
-    }
-
-    #services .services-row .card {
-        margin: 0.5rem !important;
-    }
-    #services .services-row .card .card-body {
-        padding: 1rem !important;
-    }
-
-    #referrals form .btn {
-        width: 100% !important;
-    }
-
-    #contact .social-media-link p,
-    #contact .document-download-link p {
-        padding-top: 12px !important;
-        padding-left: 0 !important;
-    }
-    #contact .social-media-link .social-link span,
-    #contact .document-download-link .social-link span {
-        padding-left: 1rem !important;
-    }
-}
-
-/* =========================
-     PROJECTS SECTION STYLES
-     =========================
-*/
-.project-filter-bar {
-    display: flex;
-    justify-content: center;
-    gap: 0.75rem;
-    flex-wrap: wrap;
-    margin-top: 1.5rem;
-    margin-bottom: 1rem;
-}
-
-.project-filter {
-    background: rgba(146, 172, 255, 0.08);
-    border: 1px solid rgba(146, 172, 255, 0.25);
-    color: var(--text-color);
-    border-radius: 999px;
-    padding: 0.6rem 1rem;
-    font-size: 0.85rem;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    transition: all 0.3s ease;
-}
-
-.project-filter:hover,
-.project-filter.active {
-    background: linear-gradient(135deg, rgba(146, 172, 255, 0.22), rgba(146, 172, 255, 0.08));
-    border-color: rgba(146, 172, 255, 0.7);
-    transform: translateY(-2px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.18);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 26px;
+    row-gap: 46px;
 }
 
 .project-card {
-    background: rgba(14, 9, 41, 0.82);
-    border-radius: 1.25rem;
-    text-align: center;
+    min-width: 0;
+    animation: enter 650ms ease-out both;
+}
+
+.project-card:nth-child(2) {
+    animation-delay: 90ms;
+}
+
+.project-card:nth-child(3) {
+    animation-delay: 160ms;
+}
+
+.project-card:nth-child(4) {
+    animation-delay: 230ms;
+}
+
+.project-image {
     position: relative;
-    width: 100%;
-    margin: 0 auto;
-    overflow: hidden;
-    border: 1px solid rgba(146, 172, 255, 0.15);
-    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.24);
-}
-
-.project-card .project-copy {
-    padding: 1.25rem 1.25rem 1.5rem;
-}
-
-.project-card .project-copy h5 {
-    color: var(--text-color);
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
-}
-
-.project-card .project-copy p {
-    color: var(--paragraph-color);
-    line-height: 1.7;
-}
-
-.screenshot-img {
-    width: 100%;
-    object-fit: cover;
     display: block;
-    margin: 0 auto;
-    min-height: 320px;
-    max-height: 420px;
+    overflow: hidden;
+    aspect-ratio: 1.68 / 1;
+    background: var(--green);
+    color: var(--white);
+    text-decoration: none;
 }
 
-.screenshot-badge {
+.project-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    transition: transform 500ms cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.project-image:hover img {
+    transform: scale(1.035);
+}
+
+.image-arrow {
     position: absolute;
-    top: 12px;
-    left: 12px;
-    background: rgba(0,0,0,0.7);
-    color: var(--extra-color);
-    padding: 6px 10px;
-    border-radius: 999px;
+    right: 14px;
+    bottom: 14px;
+    display: grid;
+    width: 38px;
+    aspect-ratio: 1;
+    place-items: center;
+    background: var(--lime);
+    color: var(--ink);
+    font-size: 1.2rem;
+    transition: transform 180ms ease;
+}
+
+.project-image:hover .image-arrow {
+    transform: translate(2px, -2px);
+}
+
+.workflow-preview {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: clamp(20px, 4vw, 42px);
+    background-color: var(--green);
+    background-image: linear-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.07) 1px, transparent 1px);
+    background-size: 28px 28px;
+}
+
+.workflow-label,
+.workflow-foot {
+    font-size: 0.67rem;
     font-weight: 700;
-    font-family: "Savate", sans-serif;
-    z-index: 5;
-    font-size: .75rem;
-    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.workflow-line {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    color: var(--ink);
+    font: 700 clamp(0.7rem, 1.5vw, 1rem)/1 var(--display-font);
+}
+
+.workflow-line span {
+    padding: 13px 11px;
+    background: var(--lime);
+}
+
+.workflow-line i {
+    color: var(--lime);
+    font-size: 1.2rem;
+    font-style: normal;
+}
+
+.workflow-foot {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.workflow-spark {
+    display: grid;
+    width: 35px;
+    aspect-ratio: 1;
+    place-items: center;
+    background: var(--lime);
+    color: var(--ink);
+    font-size: 1rem;
+    letter-spacing: 0;
+}
+
+.project-caption {
+    display: grid;
+    grid-template-columns: 1fr minmax(140px, 0.8fr);
+    gap: 18px;
+    padding-top: 16px;
+}
+
+.project-type {
+    color: var(--green);
+    font-size: 0.68rem;
+    font-weight: 700;
     letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.project-caption h3 {
+    margin: 7px 0 0;
+    font: 600 1.2rem/1.25 var(--display-font);
+}
+
+.project-caption p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.82rem;
+    line-height: 1.6;
+}
+
+.services-section {
+    padding-block: 112px 120px;
+}
+
+.section-intro {
+    max-width: 330px;
+    margin: 0 0 4px;
+    color: var(--muted);
+    font-size: 0.9rem;
+    line-height: 1.65;
+}
+
+.service-list {
+    border-top: 1px solid var(--line);
+}
+
+.service-row {
+    display: grid;
+    grid-template-columns: 55px minmax(220px, 0.9fr) minmax(240px, 1fr) 28px;
+    align-items: center;
+    gap: 24px;
+    padding: 26px 0;
+    border-bottom: 1px solid var(--line);
+}
+
+.service-number {
+    color: var(--accent);
+    font-size: 0.74rem;
+    font-weight: 700;
+}
+
+.service-row h3 {
+    margin: 0;
+    font: 600 1.2rem/1.3 var(--display-font);
+}
+
+.service-row p {
+    max-width: 430px;
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.84rem;
+    line-height: 1.6;
+}
+
+.service-arrow {
+    color: var(--accent);
+    font-size: 1.25rem;
+}
+
+.about-section {
+    padding-block: 88px 94px;
+    background: #e9eee8;
+}
+
+.about-inner {
+    display: grid;
+    grid-template-columns: 0.7fr 1.3fr;
+    gap: 50px;
+}
+
+.about-inner .eyebrow {
+    margin-top: 10px;
+}
+
+.about-inner h2,
+.contact-section h2 {
+    margin: 0;
+    font-size: clamp(2.7rem, 5vw, 4.6rem);
+    line-height: 1.02;
+}
+
+.about-inner h2 span {
+    color: var(--green);
+}
+
+.about-inner div > p {
+    max-width: 600px;
+    margin: 24px 0 0;
+    color: var(--muted);
+    font-size: 0.98rem;
+    line-height: 1.8;
+}
+
+.contact-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: end;
+    gap: 32px;
+    padding-block: 110px 115px;
+}
+
+.contact-section > .eyebrow {
+    grid-column: 1 / -1;
+    margin: 0 0 -17px;
+}
+
+.contact-section h2 span {
+    color: var(--green);
+}
+
+.contact-actions {
+    justify-self: end;
+    min-width: min(100%, 330px);
+    padding-bottom: 5px;
+}
+
+.contact-email {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding-bottom: 9px;
+    border-bottom: 1px solid var(--accent);
+    font: 600 1.05rem/1.4 var(--display-font);
+    text-decoration: none;
+}
+
+.contact-email span {
+    color: var(--accent);
+}
+
+.social-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 22px;
+    margin-top: 24px;
+}
+
+.social-links a {
+    font-size: 0.8rem;
+}
+
+.site-footer {
+    display: flex;
+    min-height: 78px;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    border-top: 1px solid var(--line);
+}
+
+.site-footer .wordmark {
+    font-size: 1.25rem;
+}
+
+.site-footer p,
+.site-footer > span {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.75rem;
+}
+
+a:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 4px;
+}
+
+@keyframes enter {
+    from {
+        opacity: 0;
+        transform: translateY(16px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 760px) {
+    .page-wrap,
+    .site-header {
+        width: min(100% - 40px, 600px);
+    }
+
+    .site-header {
+        min-height: 72px;
+    }
+
+    .site-header nav {
+        gap: clamp(12px, 4vw, 24px);
+    }
+
+    .site-header nav a,
+    .social-links a {
+        font-size: 0.78rem;
+    }
+
+    .site-header nav .nav-contact {
+        padding: 9px 10px;
+    }
+
+    .hero {
+        min-height: 600px;
+        grid-template-columns: 1fr;
+        align-content: center;
+        gap: 34px;
+        padding-block: 82px 100px;
+    }
+
+    .hero h1 {
+        max-width: 620px;
+        font-size: clamp(3.2rem, 11vw, 5.6rem);
+    }
+
+    .hero-note {
+        justify-self: start;
+        display: grid;
+        grid-template-columns: 36px 1fr auto;
+        align-items: center;
+        gap: 12px;
+        width: min(100%, 390px);
+        padding: 0 0 0 14px;
+    }
+
+    .hero-note p {
+        margin: 0;
+        font-size: 0.85rem;
+    }
+
+    .note-mark {
+        font-size: 1.55rem;
+    }
+
+    .work-section {
+        padding-block: 72px 82px;
+    }
+
+    .project-grid {
+        gap: 34px 18px;
+    }
+
+    .project-caption {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+
+    .project-caption h3 {
+        font-size: 1.05rem;
+    }
+
+    .project-caption p {
+        font-size: 0.78rem;
+    }
+
+    .workflow-line {
+        gap: 5px;
+    }
+
+    .workflow-line span {
+        padding: 10px 7px;
+    }
+
+    .services-section {
+        padding-block: 82px 88px;
+    }
+
+    .service-row {
+        grid-template-columns: 36px 1fr 22px;
+        gap: 10px 14px;
+        padding-block: 20px;
+    }
+
+    .service-row h3 {
+        font-size: 1.05rem;
+    }
+
+    .service-row p {
+        grid-column: 2;
+    }
+
+    .service-arrow {
+        grid-column: 3;
+        grid-row: 1;
+    }
+
+    .about-section {
+        padding-block: 72px 78px;
+    }
+
+    .about-inner {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .contact-section {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        padding-block: 82px 88px;
+    }
+
+    .contact-section > .eyebrow {
+        margin-bottom: -14px;
+    }
+
+    .contact-actions {
+        justify-self: start;
+    }
+}
+
+@media (max-width: 480px) {
+    .page-wrap,
+    .site-header {
+        width: calc(100% - 32px);
+    }
+
+    .site-header nav {
+        gap: 11px;
+    }
+
+    .site-header nav a,
+    .social-links a {
+        font-size: 0.7rem;
+    }
+
+    .site-header nav .nav-contact {
+        padding: 8px;
+    }
+
+    .nav-contact span {
+        margin-left: 3px;
+    }
+
+    .hero {
+        min-height: 570px;
+    }
+
+    .hero h1 {
+        font-size: clamp(2.85rem, 13vw, 4rem);
+    }
+
+    .hero-summary {
+        font-size: 0.95rem;
+    }
+
+    .hero-side-label {
+        right: auto;
+        left: 0;
+        font-size: 0.58rem;
+    }
+
+    .section-heading {
+        margin-bottom: 28px;
+    }
+
+    .section-heading h2 {
+        font-size: 2.8rem;
+    }
+
+    .services-section .section-heading {
+        align-items: start;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .section-count {
+        font-size: 0.65rem;
+    }
+
+    .project-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .project-caption {
+        grid-template-columns: 1fr minmax(120px, 0.85fr);
+        gap: 12px;
+    }
+
+    .project-caption h3 {
+        font-size: 1rem;
+    }
+
+    .workflow-line {
+        gap: 4px;
+    }
+
+    .workflow-line span {
+        padding: 9px 5px;
+        font-size: 0.58rem;
+    }
+
+    .section-intro {
+        font-size: 0.82rem;
+    }
+
+    .about-inner h2,
+    .contact-section h2 {
+        font-size: clamp(2.7rem, 12vw, 3.7rem);
+    }
+
+    .contact-email {
+        font-size: 0.95rem;
+    }
+
+    .site-footer {
+        flex-wrap: wrap;
+        padding-block: 20px;
+    }
+
+    .site-footer p {
+        order: 1;
+        width: 100%;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
 }
