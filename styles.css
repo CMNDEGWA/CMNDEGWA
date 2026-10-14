@@ -193,6 +193,20 @@ a {
     font: 600 1rem/1.45 var(--display-font);
 }
 
+.hero-note-copy {
+    transition: opacity 420ms ease, transform 420ms ease;
+}
+
+.hero-note-copy.is-exiting {
+    opacity: 0;
+    transform: translateY(-14px);
+}
+
+.hero-note-copy.is-entering {
+    opacity: 0;
+    transform: translateY(14px);
+}
+
 .note-index,
 .section-count {
     color: var(--muted);
@@ -750,9 +764,25 @@ a {
     font-size: 0.75rem;
 }
 
-a:focus-visible {
+a:focus-visible,
+button:focus-visible {
     outline: 3px solid var(--accent);
     outline-offset: 4px;
+}
+
+.has-scroll-reveal [data-reveal] {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 600ms ease, transform 600ms ease;
+}
+
+.has-scroll-reveal [data-reveal].is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.has-scroll-reveal .design-item:nth-child(3n + 2) {
+    transition-delay: 90ms;
 }
 
 @keyframes enter {
@@ -811,7 +841,7 @@ a:focus-visible {
     .hero-note {
         justify-self: start;
         display: grid;
-        grid-template-columns: 36px 1fr auto;
+        grid-template-columns: 36px minmax(0, 1fr) auto;
         align-items: center;
         gap: 12px;
         width: min(100%, 390px);
@@ -1077,5 +1107,9 @@ a:focus-visible {
         animation-duration: 0.01ms !important;
         animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
+    }
+
+    .has-scroll-reveal [data-reveal] {
+        transition-delay: 0ms;
     }
 }
