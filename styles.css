@@ -193,16 +193,19 @@ a {
     font: 600 1rem/1.45 var(--display-font);
 }
 
-.hero-note-copy {
+.hero-note-copy,
+.note-mark {
     transition: opacity 420ms ease, transform 420ms ease;
 }
 
-.hero-note-copy.is-exiting {
+.hero-note-copy.is-exiting,
+.note-mark.is-exiting {
     opacity: 0;
     transform: translateY(-14px);
 }
 
-.hero-note-copy.is-entering {
+.hero-note-copy.is-entering,
+.note-mark.is-entering {
     opacity: 0;
     transform: translateY(14px);
 }
