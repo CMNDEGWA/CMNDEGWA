@@ -1,7 +1,7 @@
 const focusNotes = [
-    "Good work starts with understanding the problem.",
-    "Build with clarity, from first sketch to reliable system.",
-    "Make useful things, then make them feel considered."
+    { text: "Good work starts with understanding the problem.", mark: "◎" },
+    { text: "Build with clarity, from first sketch to reliable system.", mark: "↗" },
+    { text: "Make useful things, then make them feel considered.", mark: "✳" }
 ];
 
 const noteRotator = document.querySelector("[data-note-rotator]");
@@ -9,6 +9,7 @@ const noteRotator = document.querySelector("[data-note-rotator]");
 if (noteRotator) {
     const noteCopy = noteRotator.querySelector("[data-note-copy]");
     const noteIndex = noteRotator.querySelector("[data-note-index]");
+    const noteMark = noteRotator.querySelector("[data-note-mark]");
     const motionPreference = window.matchMedia("(prefers-reduced-motion: reduce)");
     let activeNote = 0;
     let rotationTimer;
@@ -24,15 +25,22 @@ if (noteRotator) {
         const nextNote = (activeNote + 1) % focusNotes.length;
         const transitionDuration = motionPreference.matches ? 0 : 420;
         noteCopy.classList.add("is-exiting");
+        noteMark.classList.add("is-exiting");
 
         window.setTimeout(() => {
             activeNote = nextNote;
-            noteCopy.textContent = focusNotes[activeNote];
+            noteCopy.textContent = focusNotes[activeNote].text;
+            noteMark.textContent = focusNotes[activeNote].mark;
             noteIndex.textContent = `${String(activeNote + 1).padStart(2, "0")} / ${String(focusNotes.length).padStart(2, "0")}`;
             noteCopy.classList.remove("is-exiting");
+            noteMark.classList.remove("is-exiting");
             noteCopy.classList.add("is-entering");
+            noteMark.classList.add("is-entering");
             noteCopy.getBoundingClientRect();
-            window.requestAnimationFrame(() => noteCopy.classList.remove("is-entering"));
+            window.requestAnimationFrame(() => {
+                noteCopy.classList.remove("is-entering");
+                noteMark.classList.remove("is-entering");
+            });
             scheduleNextNote();
         }, transitionDuration);
     }
