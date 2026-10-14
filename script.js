@@ -1,7 +1,7 @@
 const focusNotes = [
-    { text: "Good work starts with understanding the problem.", mark: "◎" },
-    { text: "Build with clarity, from first sketch to reliable system.", mark: "↗" },
-    { text: "Make useful things, then make them feel considered.", mark: "✳" }
+    { text: "I starts with understanding the Problem.", mark: "◎" },
+    { text: "I Build with clarity, from first sketch.", mark: "↗" },
+    { text: "I make functional programs, then make them secure.", mark: "✳" }
 ];
 
 const noteRotator = document.querySelector("[data-note-rotator]");
