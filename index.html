@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
     <header class="site-header">
@@ -30,10 +31,10 @@
                 <p class="hero-summary">I'm Clinton, a software and data engineer building useful web products, clearer data systems, and thoughtful visual identities.</p>
                 <a class="text-link hero-link" href="#work">Explore selected work <span aria-hidden="true">↓</span></a>
             </div>
-            <div class="hero-note" aria-label="Areas of focus">
+            <div class="hero-note" data-note-rotator aria-label="Areas of focus">
                 <span class="note-mark" aria-hidden="true">✳</span>
-                <p>Good work starts with<br>understanding the problem.</p>
-                <span class="note-index">01 / 03</span>
+                <p class="hero-note-copy" data-note-copy>Good work starts with understanding the problem.</p>
+                <span class="note-index" data-note-index>01 / 03</span>
             </div>
             <span class="hero-side-label" aria-hidden="true">INDEPENDENT PRACTICE &nbsp; / &nbsp; 2026</span>
         </section>
@@ -145,27 +146,27 @@
                     <span class="section-count">01 — 06</span>
                 </div>
                 <div class="design-grid">
-                    <figure class="design-item">
+                    <figure class="design-item" data-reveal>
                         <div class="design-art"><img src="assets/images/CMN.png" alt="CMN monogram logo" loading="lazy" decoding="async"></div>
                         <figcaption>CMN · Personal mark</figcaption>
                     </figure>
-                    <figure class="design-item">
+                    <figure class="design-item" data-reveal>
                         <div class="design-art"><img src="assets/images/Clinton.png" alt="Clinton personal logo artwork" loading="lazy" decoding="async"></div>
                         <figcaption>Clinton · Identity study</figcaption>
                     </figure>
-                    <figure class="design-item">
+                    <figure class="design-item" data-reveal>
                         <div class="design-art"><img src="assets/images/J-Media.png" alt="J Media logo artwork" loading="lazy" decoding="async"></div>
                         <figcaption>J-Media · Brand mark</figcaption>
                     </figure>
-                    <figure class="design-item">
+                    <figure class="design-item" data-reveal>
                         <div class="design-art"><img src="assets/images/JM-Wallpaper.png" alt="JM Wallpaper monogram artwork" loading="lazy" decoding="async"></div>
                         <figcaption>JM Wallpaper · Monogram</figcaption>
                     </figure>
-                    <figure class="design-item">
+                    <figure class="design-item" data-reveal>
                         <div class="design-art"><img src="assets/images/JWatch.png" alt="JWatch logo artwork" loading="lazy" decoding="async"></div>
                         <figcaption>JWatch · Brand mark</figcaption>
                     </figure>
-                    <figure class="design-item">
+                    <figure class="design-item" data-reveal>
                         <div class="design-art"><img src="assets/images/Yanken-1.png" alt="Yanken wordmark logo" loading="lazy" decoding="async"></div>
                         <figcaption>Yanken · Wordmark</figcaption>
                     </figure>
@@ -182,21 +183,21 @@
                 <p class="section-intro">Practical skills for ideas that need to move from concept to something people can use.</p>
             </div>
             <div class="service-list">
-                <article class="service-row">
+                <article class="service-row" data-reveal>
                     <span class="service-number">01</span>
                     <h3>Brand &amp; Visual Design</h3>
                     <p>Visual identities, campaign creative, and digital design with a clear point of view.</p>
                     <a class="service-arrow" style="text-decoration: none;"
                      href="https://wa.me/254712629497" target="_blank" rel="noopener noreferrer" aria-label="Contact about Brand and Visual Design on WhatsApp">↗</a>
                 </article>
-                <article class="service-row">
+                <article class="service-row" data-reveal>
                     <span class="service-number">02</span>
                     <h3>Data Engineering &amp; Automation</h3>
                     <p>Structured data workflows, reliable databases, and reporting that brings useful information into focus.</p>
                     <a class="service-arrow" style="text-decoration: none;"
                      href="https://wa.me/254712629497" target="_blank" rel="noopener noreferrer" aria-label="Contact about Data Engineering and Automation on WhatsApp">↗</a>
                 </article>
-                <article class="service-row">
+                <article class="service-row" data-reveal>
                     <span class="service-number">03</span>
                     <h3>Software Development</h3>
                     <p>Web applications and business tools built around real needs and straightforward experiences.</p>
@@ -207,7 +208,7 @@
         </section>
 
         <section class="about-section" id="about" aria-labelledby="about-title">
-            <div class="page-wrap about-inner">
+            <div class="page-wrap about-inner" data-reveal>
                 <p class="eyebrow">A little about me</p>
                 <div>
                     <h2 id="about-title">Curious by nature.<br><span>Useful by design.</span></h2>
@@ -216,7 +217,7 @@
             </div>
         </section>
 
-        <section class="contact-section page-wrap" id="contact" aria-labelledby="contact-title">
+        <section class="contact-section page-wrap" id="contact" aria-labelledby="contact-title" data-reveal>
             <p class="eyebrow">Have something in mind?</p>
             <h2 id="contact-title">Let's make it<br><span>work better.</span></h2>
             <div class="contact-actions">
@@ -232,8 +233,8 @@
 
     <footer class="site-footer page-wrap">
         <a class="wordmark" href="#top" aria-label="Back to top"><img src="assets/images/Clinton.png" alt="" aria-hidden="true"></a>
-        <p>Software, data &amp; design, with care.</p>
-        <span>© Clinton Ndegwa 2026</span>
+        <p>Software, Data &amp; Design.</p>
+        <span>© 2026</span>
     </footer>
 </body>
 </html>
