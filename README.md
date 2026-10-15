@@ -1,4 +1,4 @@
-# Software & Data Engineer
+# Computer & Data Engineer
 
 ## About
 
@@ -24,6 +24,8 @@ This repository serves as a hub to showcase my technical skills, share project c
     - [Privacy Bash Script](https://github.com/CMNDEGWA/pbash)
   - Office Suite / Excel Analyser
     - [Data Visualizer - Excel](https://github.com/CMNDEGWA/Data-Visualizer-Web-Application)
+  - Windows Administration
+    - [Powershell Admin Console](https://github.com/CMNDEGWA/Poweshell_Admin_Console) ...in progress.
 - [Contact](#contact)
 
 ---
