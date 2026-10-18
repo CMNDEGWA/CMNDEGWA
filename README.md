@@ -34,7 +34,10 @@ This repository serves as a hub to showcase my technical skills, share project c
 
 In this section, you will find a selection of projects highlighting the technology stacks and methodologies I use to solve real-world problems.
 
+<details open> 
+<summary>
 ## E-Commerce Store Website
+</summary>
 
 **Title** 
 
@@ -82,10 +85,14 @@ It supports:
   - Admin-side product management,
   - Bulk CSV/JSON imports,
   - Single-product creation.
-
+</details>
 ---
 
+<details>
+<summary>
 ## Inventory Management System
+</summary>
+
 **Title**
 
 [`IMS`](https://github.com/CMNDEGWA/SQL/tree/main/IMS)
@@ -116,10 +123,14 @@ HTML, CSS and Javascript.
 **Results**
 
 An Inventory Management SYstem (IMS) that tracks stock movements safely and presents data through a Django Web Dashboard.
-
+</details>
 ---
 
+<details>
+<summary>
 ## Privacy Bash Script
+</summary>
+
 **Title**
 
 [`pbash`](https://github.com/CMNDEGWA/SQL/tree/main/IMS)
@@ -154,10 +165,14 @@ iproute2 for MAC changes.
 **Results**
 
 A privacy suite built on bash, that gives a user a graphical tool for performing privacy hardening tasks all in a single place. It is lightweight, easy to run and understand and usable on Linux systems.
-
+</details>
 ---
 
+<details>
+<summary>
 ## Data Visualizer - Excel
+</summary>
+
 **Title**
 
 [`Data Visualier - Excel`](https://github.com/CMNDEGWA/Data-Visualizer-Web-Application)
@@ -199,7 +214,7 @@ Charts by Chart,js
 
 A data visualization workflow that can process incomplete or inconsistent Excel files, identify relevanr sheets and columns automatically, highlight missing or invalid data and generate summary insights through a dashboard.
 It improves data usability by turning raw spreadsheet input into cleaner, structured and actionable business information
-
+</details>
 ---
 
 ## Contact
