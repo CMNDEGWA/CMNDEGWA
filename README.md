@@ -88,8 +88,10 @@ It supports:
 ## Inventory Management System
 <details>
 <summary>
-[`IMS`](https://github.com/CMNDEGWA/SQL/tree/main/IMS)
+IMS
 </summary>
+
+[`IMS`](https://github.com/CMNDEGWA/SQL/tree/main/IMS)
 
 **Goal** 
 
