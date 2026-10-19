@@ -118,7 +118,6 @@ HTML, CSS and Javascript.
 
 An Inventory Management SYstem (IMS) that tracks stock movements safely and presents data through a Django Web Dashboard.
 </details>
----
 
 ## Privacy Bash Script
 <details>
