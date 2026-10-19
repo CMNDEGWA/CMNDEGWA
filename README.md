@@ -35,8 +35,8 @@ This repository serves as a hub to showcase my technical skills, share project c
 In this section, you will find a selection of projects highlighting the technology stacks and methodologies I use to solve real-world problems.
 
 <details open> 
-<summary>
-<strong style="font-size:58px">E-Commerce Store Website</strong>
+<summary style="font-size:58px">
+<strong>E-Commerce Store Website</strong>
 </summary>
 
 **Title** 
