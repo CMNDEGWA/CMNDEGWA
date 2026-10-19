@@ -32,7 +32,7 @@ This repository serves as a hub to showcase my technical skills, share project c
 
 ## Portfolio Projects
 
-In this section, you will find a selection of projects highlighting the technology stacks and methodologies I use to solve real-world problems.
+In this section, you will find a selection (dropdown buttons) of projects highlighting the technology stacks and methodologies I use to solve real-world problems.
 
 ## E-Commerce Store Website
 <details open>
@@ -84,7 +84,6 @@ It supports:
   - Bulk CSV/JSON imports,
   - Single-product creation.
 </details>
----
 
 ## Inventory Management System
 <details>
@@ -158,7 +157,6 @@ iproute2 for MAC changes.
 
 A privacy suite built on bash, that gives a user a graphical tool for performing privacy hardening tasks all in a single place. It is lightweight, easy to run and understand and usable on Linux systems.
 </details>
----
 
 ## Data Visualizer - Excel
 <details>
@@ -204,7 +202,6 @@ Charts by Chart,js
 A data visualization workflow that can process incomplete or inconsistent Excel files, identify relevanr sheets and columns automatically, highlight missing or invalid data and generate summary insights through a dashboard.
 It improves data usability by turning raw spreadsheet input into cleaner, structured and actionable business information
 </details>
----
 
 ## Contact
 - GitHub: [@CMNDEGWA](https://github.com/CMNDEGWA)
