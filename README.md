@@ -124,8 +124,10 @@ An Inventory Management SYstem (IMS) that tracks stock movements safely and pres
 ## Privacy Bash Script
 <details>
 <summary>
-[`pbash`](https://github.com/CMNDEGWA/SQL/tree/main/IMS)
+pbash
 </summary>
+
+[`pbash`](https://github.com/CMNDEGWA/SQL/tree/main/IMS)
 
 **Goal** 
 
@@ -162,8 +164,10 @@ A privacy suite built on bash, that gives a user a graphical tool for performing
 ## Data Visualizer - Excel
 <details>
 <summary>
-[`Data Visualier - Excel`](https://github.com/CMNDEGWA/Data-Visualizer-Web-Application)
+Data Visualizer - Excel
 </summary>
+
+[`Data Visualier - Excel`](https://github.com/CMNDEGWA/Data-Visualizer-Web-Application)
 
 **Goal** 
 
