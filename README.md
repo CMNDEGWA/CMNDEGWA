@@ -35,11 +35,12 @@ This repository serves as a hub to showcase my technical skills, share project c
 In this section, you will find a selection of projects highlighting the technology stacks and methodologies I use to solve real-world problems.
 
 ## E-Commerce Store Website
-<details open> 
-**Title** 
+<details open>
 <summary>
 [De-commerce](https://github.com/CMNDEGWA/De-commerce)
 </summary>
+
+
 **Goal** 
 
 To build a complete online shopping experience where customers can browse products, add them to a cart, place orders and manage their profile. Admins can manage inventory and order operations from a dedicated dashboard.
@@ -85,14 +86,11 @@ It supports:
 </details>
 ---
 
+## Inventory Management System
 <details>
 <summary>
-## Inventory Management System
-</summary>
-
-**Title**
-
 [`IMS`](https://github.com/CMNDEGWA/SQL/tree/main/IMS)
+</summary>
 
 **Goal** 
 
@@ -123,14 +121,11 @@ An Inventory Management SYstem (IMS) that tracks stock movements safely and pres
 </details>
 ---
 
+## Privacy Bash Script
 <details>
 <summary>
-## Privacy Bash Script
-</summary>
-
-**Title**
-
 [`pbash`](https://github.com/CMNDEGWA/SQL/tree/main/IMS)
+</summary>
 
 **Goal** 
 
@@ -165,14 +160,11 @@ A privacy suite built on bash, that gives a user a graphical tool for performing
 </details>
 ---
 
+## Data Visualizer - Excel
 <details>
 <summary>
-## Data Visualizer - Excel
-</summary>
-
-**Title**
-
 [`Data Visualier - Excel`](https://github.com/CMNDEGWA/Data-Visualizer-Web-Application)
+</summary>
 
 **Goal** 
 
