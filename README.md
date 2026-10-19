@@ -36,7 +36,7 @@ In this section, you will find a selection of projects highlighting the technolo
 
 <details open> 
 <summary>
-<strong>E-Commerce Store Website</strong>
+<strong style="font-size:58px">E-Commerce Store Website</strong>
 </summary>
 
 **Title** 
