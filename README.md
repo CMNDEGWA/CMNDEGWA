@@ -36,7 +36,7 @@ In this section, you will find a selection of projects highlighting the technolo
 
 <details open> 
 <summary>
-## E-Commerce Store Website
+E-Commerce Store Website
 </summary>
 
 **Title** 
