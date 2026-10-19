@@ -37,9 +37,10 @@ In this section, you will find a selection (dropdown buttons) of projects highli
 ## E-Commerce Store Website
 <details open>
 <summary>
-[De-commerce](https://github.com/CMNDEGWA/De-commerce)
+De-commerce
 </summary>
 
+[De-commerce](https://github.com/CMNDEGWA/De-commerce)
 
 **Goal** 
 
